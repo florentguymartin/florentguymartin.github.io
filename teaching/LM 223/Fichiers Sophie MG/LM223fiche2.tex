@@ -1,0 +1,221 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}[section]
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}[thm]{Ex}{\theorembodyfont{\upshape}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Fiche d'exercices n$^o$ 2}
+\end{center}
+\normalsize
+ \section{Valeurs propres.}
+
+
+
+\begin{ex}
+Soit $E$ un espace vectoriel de dimension $n$, $n\geq 1$, et soient $u$, $v$ deux endomorphismes de $E$. 
+\begin{enumerate}
+\item Montrer que si 0 est valeur propre de $u\circ v$ alors 0 est aussi valeur propre de $v\circ u$.
+\item Montrer que $u\circ v$  et $v\circ u$ ont le m\^eme ensemble de valeur propre.
+
+\end{enumerate}
+\end{ex}
+
+\begin{ex}
+Soit $E$ un espace vectoriel de dimension $n$, $n\geq 1$, et soit $u$ un endomorphisme nilpotent (i.e $\exists k\in \N$,
+tel que $u^k=0$) non nul de $E$. 
+\begin{enumerate}
+\item On note $Sp_u$ l'ensemble des valeurs propres de $u$.
+\begin{enumerate}
+\item Montrer que $0\in Sp_u $, puis que $Sp_u =\lbrace 0\rbrace$.
+\item $u$ est-il diagonalisable? 
+\end{enumerate}
+\item On consid\`ere maintenant l'endomorphisme $id-u$.
+\begin{enumerate}
+\item En utilisant le fait que $u^k=0$ et une identit\'e remarquable, montrer que $id-u$ est inversible et donner son inverse.
+\item Quelles sont les valeurs propres de $id-u$?
+\item $id-u$ est-il diagonalisable? 
+
+\end{enumerate}
+
+\end{enumerate}
+\end{ex}
+
+
+
+
+\begin{ex}
+Soit $E$ un $\C$-espace vectoriel de dimension $n$, $n\geq 1$.
+\begin{enumerate}
+\item Montrer que tout endomorphisme de $E$ poss\`ede au moins une valeur propre.
+\item Soient $u$, $v$ deux endomorphismes de $E$ tels que $u\circ v=v\circ u$.
+
+\begin{enumerate}
+\item Soit $\lambda $ une valeur propre de $u$ et soit $E^u_\lambda $ le sous espace propre de $u$
+associ\'e \`a la valeur propre $\lambda $. Montrer que $E^u_\lambda $ est stable par $v$.
+\item En d\'eduire qu'il existe dans $E^u_\lambda $ un vecteur propre de $v$.
+\item On suppose que $u$ poss\`ede $n$ valeurs propres distinctes. Montrer que $u$ et $v$ sont tous deux diagonalisables,
+et qu'il existe une base $\BC$ de $E$ telle que Mat$_\BC(u)$ et Mat$_\BC(v)$ sont diagonales.
+\end{enumerate}
+\end{enumerate}
+\end{ex}
+
+
+ \section{Diagonalisation.}
+
+\begin{ex}
+Pour les matrices r\'eelles suivantes, trouver les valeurs propres, d\'eterminer si la matrice est diagonalisable et dans ce cas donner 
+une base de vecteurs propres:
+$$\left(
+\begin{array}{ccc}
+0&1 &2\\
+ -1&2&2 \\
+  1&0  &0
+\end{array}
+\right),
+\left(
+\begin{array}{ccc}
+2&0 &0\\
+ -3&-1&3 \\
+  3&3  &-1
+\end{array}
+\right),
+\left(
+\begin{array}{ccc}
+3&1 &0\\
+ -4&-1&0 \\
+  4&-8  &2
+\end{array}
+\right),
+\left(
+\begin{array}{ccc}
+1&0 &0\\
+ 0&0&-1 \\
+  0&1&2
+\end{array}
+\right),
+\left(
+\begin{array}{ccc}
+0&0&1\\
+ 1&0&-3 \\
+  0&1  &3
+\end{array}
+\right)$$
+
+
+\end{ex}
+
+\begin{ex}
+On consid\`ere:
+$$A=\left(
+\begin{array}{ccc}
+3&2&2\\
+ 2&3&2 \\
+ 2&2  &3
+\end{array}
+\right)$$
+Calculer $A^n$ pour tout $n\in \N$.
+
+\end{ex}
+
+\newpage
+\begin{ex}
+
+Soit $A$ la matrice $n\times n$ dont tous les coefficients valent
+$1$. 
+\begin{enumerate}
+\item Calculer $A^2$. En d\'eduire que si $\lambda $ est une valeur propre de
+$A$, alors $\lambda $ vaut $0$ ou $n$. 
+\item D\'eterminer la dimension des espaces
+propres de $A$~: $A$ est-elle diagonalisable~?
+\end{enumerate}
+
+\end{ex}
+
+
+\begin{ex}
+Soit $\Phi :\R_2[X]\rightarrow \R_2[X]$, l'application qui \`a tout polyn\^ome $P\in \R_2[X]$ associe le reste de la division 
+euclidienne de $(X+1)P(X)$ par $X^3+1$.
+\begin{enumerate}
+\item Justifier que $\Phi $ est bien d\'efinie et montrer que $\Phi $ est lin\'eaire.
+\item Ecrire la matrice $M$ de $\Phi $ dans la base canonique $(1,X,X^2)$.
+\item Quelles sont les valeurs propres de $M$? $M$ est-elle diagonalisable?
+\end{enumerate}
+\end{ex}
+
+
+
+
+
+\begin{ex}
+On consid\`ere l'application lin\'eaire suivante:
+ $$\begin{array}{cccl}\Phi:&\M_2(\R)&\longrightarrow&\M_2(\R)\\
+&M&\longmapsto&AM\end{array}\hspace{1cm}\text{o\`u }A=\left(\begin{array}{cc}2&1\\1&2\end{array}\right)$$
+
+\begin{enumerate}
+\item Ecrire la matrice de $\Phi$ dans la base canonique de $\M_2(\R)$.
+
+\item Est-ce que $\Phi$ est diagonalisable~? Si oui donner la base de $\M_2(\R)$ dans laquelle la matrice de $\Phi$ est diagonale. 
+\end{enumerate}
+\end{ex}
+
+
+\end{document}
+
+

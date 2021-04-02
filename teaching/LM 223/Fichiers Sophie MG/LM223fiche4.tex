@@ -1,0 +1,238 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}[section]
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{exercice}[thm]{Ex}{\theorembodyfont{\upshape}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+
+\newcommand{\pmm}[1]{\ \text{#1}} %pour insérer la ponctuation dans les équations hors-texte avec tjrs le même espace
+\newcommand{\std}[1]{\mathbf{#1}}
+\newcommand{\I}[1][]{\std{I}_{#1}} \newcommand{\ind}[1]{\std{1}_{#1}}
+\renewcommand{\ge}{\geqslant} \renewcommand{\le}{\leqslant}
+\newcommand{\eps}{\varepsilon} \newcommand{\truc}{\,\cdot\,}
+
+\DeclareMathOperator{\tr}{tr}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Fiche d'exercices n$^o$ 4}
+\end{center}
+\normalsize
+\section{Formules sur les formes quadratiques g\'en\'erales}
+
+\begin{exercice}
+Soit $E$ un espace vectoriel sur $\K=\R$ ou $\C$ et une application $f:E\rightarrow \K$ telle que
+\begin{enumerate}
+\item[(i)] $f(\lambda x)=\lambda^2 f(x)$, pour tous $x\in E$, $\lambda\in \K$,
+\item[(ii)] $(x,y)\mapsto \frac{1}{2}\big(f(x+y)-f(x)-f(y)\big)$ de $E\times E$ dans $\K$, est lin\'eaire par rapport \`a la premi\`ere variable.
+\end{enumerate}
+Montrer que $f$ est une forme quadratique.
+\end{exercice} 
+
+\begin{exercice}
+Soit $E$ un espace vectoriel sur $\K=\R$ ou $\C$  et  $q$ une forme quadratique sur $E$.
+\begin{enumerate}
+\item Montrer la \textit{formule du parall\'elogramme}:
+$$
+ \forall \; x,y\in E, \quad q(x+y)+q(x-y)=2\big(q(x)+q(y)\big) \qquad \text{(PA)}.
+$$
+\item Montrer la formule de polarisation d'ordre 3:
+$$
+ \forall \; x,y,z\in E, \quad q(x+y)+q(y+z)+q(x+z)=q(x)+q(y)+q(z)+q(x+y+z)  \qquad \text{(PO)}.
+$$
+\item Expliquer pourquoi (PO) implique (PA).
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+Soit $q$ une forme quadratique positive (i.e. $q(x)\geq 0$, $\forall\; x$) sur un $\R$-e.v $E$ et $b$ sa forme polaire.
+\begin{enumerate}
+\item Montrer  l'\textit{in\'egalit\'e de Cauchy-Schwarz}
+$$
+ \forall \; x,y\in E, \quad b(x,y)^2\leq q(x)q(y) \qquad \text{(CS)} .
+$$
+(Indication: consid\'erer l'application $P:\R \rightarrow \R, t\mapsto q(x+ty)$ avec $x$ et $y$ fix\'es.)
+\item Montrer que si $x$ et y sont li\'es alors (CS) est une \'egalit\'e. La r\'eciproque est-elle vraie?
+\item On suppose de plus que $q$ est d\'efinie. Montrer que si pour $x,y\in E$ (CS) est une \'egalit\'e,
+alors $x$ et $y$ sont li\'es. (Indication: utiliser \`a nouveau $P$.)
+\end{enumerate}
+
+\end{exercice}
+
+\begin{exercice}
+Soit $q$ une forme quadratique positive (i.e. $q(x)\geq 0$, $\forall\; x$).
+\begin{enumerate}
+\item Montrer  l'\textit{in\'egalit\'e de Minkowski} (appel\'ee aussi i\textit{in\'egalit\'e triangulaire})
+$$
+ \forall \; x,y\in E, \quad \sqrt{q(x+y)}\leq \sqrt{q(x)}+\sqrt{q(y)} \qquad \text{(M)} .
+$$
+(Indication: utiliser Cauchy-Schwarz.)
+\item On suppose de plus que $q$ est d\'efinie. Montrer que pour $x,y\in E$ (M) est une \'egalit\'e si et seulement si 
+$x=\varrho y$ ou $y=\varrho x$ avec $\varrho \geq 0$.
+\end{enumerate}
+ \end{exercice}
+ 
+ 
+\section{Formes quadratiques/ Repr\'esentations matricielles}
+ \begin{exercice} \label{fqr4}
+Trouver les formes polaires et le rang des formes quadratiques suivantes sur $\mathbb{R}^4$, donner les matrices dans la base canonique de $\R^4$.
+\begin{enumerate}
+\item $q(x,y,z,t)=xy+y^2$ 
+\item $q(x,y,z,t)=xy+zt+t^2$ 
+\item $q(x,y,z,t)=x^2-y^2+z^2-t^2$
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+Montrer que le d\'eterminant est une forme quadratique sur $M_2(\R)$. Donner sa forme polaire, donner sa matrice
+dans la base canonique $\{E_{11}, E_{12}, E_{21}, E_{22}\}$. Cette forme est-elle d\'eg\'en\'er\'ee, d\'efinie, positive?
+\end{exercice}
+
+\begin{exercice}
+Soient $A$ et $B$ deux matrices sym\'etriques de $M_n(\K)$ telles que $\forall$ X $\in \mathbb{R}^n$, $^tXAX=$ $^tXBX$ (*)
+\begin{enumerate}
+\item Soient X, Y $\in \mathbb{R}^n$, en appliquant (*) \`a X, Y et X+Y, montrer que $^tXAY=$ $^tXBY$
+\item En rempla\c{c}ant X et Y par des vecteurs de la base canonique, en d\'eduire que $A=B$.
+ \end{enumerate}
+ Que peut-on d\'eduire pour les formes quadratiques ?
+\end{exercice}
+
+\section{Orthogonalit\'e-Isotropie}
+
+\begin{exercice}
+Soit $q$ une forme quadratique sur $\R^n$, $b$ sa forme polaire et $Q$ sa matrice dans la base canonique.
+\begin{enumerate}
+\item Si $Q=\mathrm{Id}$, existe-t-il un vecteur $x\in \R^n$ tel que $b(x,y)=0$ quel que soit $y\in \R^n$? 
+Que vaut le noyau $N(q)$, le c\^one $C(q)$?
+\item On suppose ici que $\rg(Q)=n$. 
+\begin{enumerate}
+\item Expliquer pourquoi pour tout $x\in \R^n$ il existe $y\in \R^n$ tel que $x=Qy$.
+\item Que vaut le noyau $N(q)$, le c\^one $C(q)$?
+ \end{enumerate}
+\item On suppose ici que $\rg(Q)<n$. 
+\begin{enumerate}
+\item Expliquer pourquoi il existe $x\in \R^n$ tel que $Qx=0$.
+\item Montrer que $N(q)\not=\{0\}$.
+ \end{enumerate}
+ \item En d\'eduire que $N(q)=\{0\}$ si et seulement si $\rg(Q)=n$. 
+ \end{enumerate}
+ \end{exercice}
+
+
+\begin{exercice}
+ Soit $q: E \rightarrow K$ une forme quadratique sur un espace vectoriel de dimension finie. 
+\begin{enumerate} 
+\item Pour tout sous-espace vectoriel $F \subset E$, montrer que l'on a ($F^\perp)^\perp=F+N(q)$.
+\item  Pour tous sous-espaces vectoriels $F,G \subset E$, montrer que $(F+G)^{\perp}=F^{\perp} \cap G^{\perp}$. Si $q$ est non-d\'eg\'en\'er\'ee, montrer que l'on a $( F \cap G)^{\perp} =F^{\perp}+G^{\perp}$. 
+\end{enumerate}
+\end{exercice}
+
+ 
+ \begin{exercice}
+ Les formes quadratiques de l'exercice \ref{fqr4} sont-elles d\'eg\'en\'er\'ees? Sont-elles d\'efinies?
+ \end{exercice}
+
+
+ \begin{exercice}
+ On consid\`ere la forme quadratique $q$ de $\R^4$ dont la matrice dans la base canonique est:
+ $$
+ \begin{pmatrix}
+ 1&0&\sqrt{3}&0\\
+ 0&-9&0&0\\
+ \sqrt{3}&0 &4&\sqrt{3}\\
+ 0&0&\sqrt{3}&1
+ \end{pmatrix}.
+ $$
+ \begin{enumerate} 
+\item La forme $q$ est-elle d\'eg\'en\'er\'ee?
+\item Existe-t-il des vecteurs $q$-isotropes non nuls?
+\item On note $u=(0,-2,3,0)$. Que vaut $\dim \{u\}^\bot $? Donner une base de $ \{u\}^\bot $.
+\end{enumerate}
+ \end{exercice}
+ 
+\begin{exercice}
+Construire une base orthogonale pour chacune des formes de $\R^3$ ou $\R^4$ suivantes: 
+ \begin{enumerate} 
+\item $q(x,y,z)=x^2+y^2+xz$,
+\item $q(x,y,z)=8xy-16xz-8yz$,
+\item $q(x,y,z)=2x^2+5y^2+19z^2-8xy+12xz-18yz$,
+\item $q(x,y,z,t)=x^2+2xy-4xt+3y^2+8yz+6y^2-2t^2$.
+\end{enumerate}
+ \end{exercice}
+ 
+\begin{exercice}
+Diagonaliser et donner la signature des formes de $\R^3$ ou $\R^4$ suivantes: 
+ \begin{enumerate} 
+\item $q(x_1,x_2,x_3)=x_1^2+3x_2^2+8x_3^2-4x_1x_2+6x_1x_3-10x_2x_3$,
+\item $q(x_1,x_2,x_3)=4x_1^2+2x_2^2-3x_1x_2+2x_1x_3-4x_2x_3$,
+\item $q(x_1,x_2,x_3, x_4)=4x_1x_2+4x_2x_3-2x_3x_4$.
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+Soit $E=\R_n[X]$ et $q$ la forme quadratique sur $E$ donn\'ee par $P\mapsto \int_{-1}^1P^2(t)dt$.
+\begin{enumerate} 
+\item Donner la forme polaire $b$ associ\'ee \`a $q$.
+\item On pose $p_0=1$, et $p_k=\frac{d^k}{dX^k}((X^2-1)^k)$. Montrer que $p_k\in \{1, X, X^2,\ldots, X^{k-1}\}^\bot$.
+\item En d\'eduire une base $q$-orthogonale de $E$.
+\end{enumerate}
+\end{exercice}
+
+\end{document}
+
+

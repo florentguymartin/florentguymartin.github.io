@@ -1,0 +1,96 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+
+
+
+\newtheorem{Theoreme}{Th{\'e}or{\`e}me}[section]
+\newtheorem{Definition}{D{\'e}finition}[section]
+\newtheorem{Prop}{Proposition}[section]
+\newtheorem{Lemme}{Lemme}[section]
+
+\begin{document}
+
+\title{Correction contrôle 1 LM121}
+\maketitle
+
+\begin{enumerate}
+ \item 
+$M_1$ est le point de coordonnées $(3,2)$. \\
+$M_2$ de coordonnées $(-\frac{1}{2} , \frac{\sqrt{3}}{2})$ . C'est le point du cercle unité qui fait un angle 
+de $\frac{2\pi}{3}$ avec l'axe $(Ox)$.
+$$z_{M_3} = \frac{-3+i}{1+i} = \frac{(-3+i)(1-i)}{(1+i)(1-i)} = \frac{-3+3i+i+1}{1+1}
+=\frac{-2+4i}{2}=-1+2i$$
+$M_3$ est donc le point de coordonnées $(-1,2)$. \\
+$z_{M_4}=2e^{\frac{-4i\pi}{3}}=2e^{\frac{2i\pi}{3}} = 2(-\frac{1}{2} +i\frac{\sqrt{3}}{2} ) 
+=-1+i\sqrt{3}$.
+$M_4$ a donc pour coordonnées $(-1,\sqrt{3} )$.
+
+
+\item
+
+On pose $z=re^{i\theta}$. L'égalité devient 
+$z^4 = r^4 e^{4i\theta} = -16 = 16e^{i\pi} = 2^4e^{i\pi}$.
+Une solution est donc 
+$r=2$ et $\theta = \frac{\pi}{4}$, qui nous donne la solution particulière :\\
+$z_1= 2e^{\frac{i\pi}{4} } \ \ \ (=\sqrt{2} +i\sqrt{2} )$.\\
+Ainsi $z^4 = -16 = z_1^4 \Leftrightarrow \left ( \frac{z}{z_1} \right)^4 = 1 $ \\
+$\Leftrightarrow \frac{z}{z_1}  \in \{ 1, e^{\frac{i\pi}{2} } , e^{i\pi} , e^{\frac{3i\pi}{2}} \}$.\\
+Les solutions sont donc :
+$$z_1 = 2e^{\frac{i\pi}{4}} , z_2 = 2e^{\frac{3i\pi}{4} } , z_3 =2 e^{\frac{5i\pi}{4}} , z_4 = 2e^{\frac{7i\pi}{4} }$$
+
+
+\item
+On pose $z=x+iy$. On a alors :
+
+$$\frac{2z+1}{z+i} = \frac{2x+1+2iy}{x+i(y+1)}= \frac{(2x+1+2iy)(x-i(y+1) )}{(x+i(y+1) )(x-i(y+1) )}$$
+$$=\frac{(2x+1)x + 2y(y+1) +i( -(2x+1)(y+1) + 2yx )}{x^2 +(y+1)^2}$$
+$$= \frac{2x^2+x+2y^2+2y +i(-2xy -2x-y-1 +2yx) }{x^2+(y+1)^2}$$
+$$=\frac{2x^2+x+2y^2+2y + i(-2x-y-1)}{x^2+(y+1)^2}$$
+La partie imaginaire sera nulle si et seulement si
+$-2x-y-1=0$ , ce qui correspond donc à la droite $\mathcal{D}$  d'équation $y=-2x-1$, privée du point $(0,-1)$ , qui correspond au nombre complexe d'affixe $-i$, qui n'est pas dans le domaine de définition de 
+$z \mapsto \frac{z+1}{z+i}$. \\
+
+
+ 
+\item
+$$\sin^3( \theta) = \left( \frac{e^{i\theta} - e^{-i\theta}}{2i} \right)^3=
+\left(\frac{e^{i\theta} - e^{-i\theta}}{2i} \right)^2 \left( \frac{e^{i\theta} - e^{-i\theta} }{2i} \right) $$
+$$= \left( \frac{e^{2i\theta} -2 + e^{-2i\theta} }{-4} \right) \left( \frac{e^{i\theta} - e^{-i\theta}}{2i} \right)
+= \frac{-1}{4} \left( \frac{e^{3i\theta} -2e^{i\theta} + e^{-i\theta} - e^{i\theta} + 2 e^{-i\theta} - e^{-3i\theta}}{2i} \right) $$
+$$= \frac{-1}{4} \left( \frac{e^{3i\theta} - e^{-3i\theta} }{2i} - 3 (\frac{e^{i\theta} - e^{-i\theta} }{2i} ) \right)$$
+
+$$=\frac{-1}{4} \sin (3\theta ) + \frac{3}{4 } \sin (\theta) $$
+
+\item
+On pose 
+$Z=z^2$.
+L'égalité devient
+$$1+Z+Z^2+Z^3+Z^4+Z^5=0$$
+Si cette égalité a lieu, $Z\neq 1$ (sinon en remplaçant, on aurait $6\times1 =0$ ).
+La formule d'une somme géométrique nous donne alors :
+$$1+Z+Z^2+Z^3+Z^4+Z^5= \frac{Z^6-1}{Z-1}=0$$
+donc $Z^6-1=0$, donc $z^{12}=Z^6=1$ , donc $z$ est une racine 
+$12$-ième de l'unité, donc $|z|=1$.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -1,0 +1,77 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+
+
+
+
+\title{correction}
+\maketitle
+
+\renewcommand{\labelitemi}{*}
+
+
+\textbf{Exercice 1} : \\
+Donner le DL à l'ordre $3$ en $0$ de :
+$$\text{e}^{(\text{e}^x\text{sin}(x))}$$
+A l'ordre 3 en $0$ on a : \\
+$\text{e}^x\text{sin}(x) = (1+x+\frac{x^2}{2}+\frac{x^3}{6})(x-\frac{x^3}{6})+\circ (x^3) = \\
+x + x^2 + \frac{x^3}{2} - \frac{x^3}{6} + \circ (x^3) = x + x^2 +\frac{x^3}{3} + \circ (x^3)$\\
+Comme cette expression tend vers $0$ on peut réutiliser le DL de $\text{e}^x$ en $0$ : \\
+$\text{e}^{(\text{e}^x\text{sin}(x))}=1 + x + x^2 +\frac{x^3}{3} + \frac{(x + x^2 +\frac{x^3}{3})^2}{2} + \frac{(x + x^2 +\frac{x^3}{3})^3}{6} + \circ (x^3)=$\\
+$1+x+x^2+ \frac{x^3}{3} + \frac{x^2}{2} + x^3 + \frac{x^3}{6} + \circ (x^3) = 1+x+\frac{3x^2}{2} + \frac{3x^3}{2} + \circ (x^3) $
+
+
+\vspace{10mm}
+
+\textbf{Exercice 2} : \\
+Calculer l'intégrale suivante :
+
+$$\int_1^2 \frac{1}{x^2-2x+2}dx$$
+
+On a à integrer l'inverse d'un polynome du second degré. Il y a donc trois possibilités :
+\begin{itemize}
+
+\item le polynome a deux racines réelles distinctes $a$ et $b$, auquel cas l'expression est (à une constante près)
+de la forme $\frac{1}{(x-a)(x-b)}$, et on doit pouvoir décomposer cette fraction rationelle sous la forme
+$\frac{\alpha}{x-a}+\frac{\beta}{x-b}$ et on sait trouver une primitive maintenant.
+
+\item ou bien le polynome a une racine multiple, disons $a$, et donc à une constante près, l'expression qu'on cherche à integrer est de la forme
+$\frac{1}{(x-a)^2}$. Mais là on a une primitive pas dure à trouver : $-\frac{1}{x-a}$.
+
+\item dernier cas, le polynome n'a pas de racines réelles (i.e. a un discriminant $<0$). Dans ce cas, à une constante multiplicative près, 
+on a une expression de la forme
+$\frac{1}{x^2+cx+d}=\frac{1}{(x+\frac{c}{2})^2+d-\frac{c^2}{4}}$.\\
+Le terme $d-\frac{c^2}{4}$ est en fait $\frac{-\Delta}{4}$ donc est strictement positif. \\
+ Puis on fait le changement de variable $u=x+\frac{c}{2}$, qui revient donc à 
+$x=u-\frac{c}{2}$, donc donne $dx=du$, et on est ramené à integrer $\frac{1}{u^2+r}$ où $r=\frac{-\Delta}{4}$ est $>0$. Là on fait tout pour se retrouver avec une expression de la forme 
+$\frac{1}{1+w^2}$ dont on connait une primitive : Arctan. Or il suffit de faire :\\
+$\frac{1}{u^2+r} = \frac{1}{r} \frac{1}{\frac{u^2}{r}+1} = \frac{1}{r} \frac{1}{(\frac{u}{\sqrt{r}})^2+1}$. \\
+Donc on fait le changement de variable $w=\frac{u}{\sqrt{r}}$ qui donne $du=\sqrt{r}dw$. 
+\end{itemize}
+\vspace{8mm}
+Dans le cas qui nous concerne, $I=\int_1^2 \frac{dx}{x^2-2x+2}$ on est dans le troisième cas, i.e le polynome n'a pas de racines réelles, et on arrive à :\\
+$x^2-2x+2=(x-1)^2+1$ d'où $I=\int_1^2\frac{1}{(x-1)^2+1} dx$ .\\
+On fait donc le changement de variables $x-1=u$ , i.e $x=1+u$, qui donne $dx=du$ 
+et comme dans l'integrale $I=\int_1^2 ...$ $x$ variait entre $1$ et $2$, $u$ (qui est égal à $x-1$) doit varier entre 0 et 1, d'où \\
+$I=\int_0^1\frac{1}{u^2+1}du = [\text{Arctan}]_0^1 = \frac{\pi}{4}-0=\frac{\pi}{4}$.
+
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{bibli}
+
+
+
+
+
+\end{document}

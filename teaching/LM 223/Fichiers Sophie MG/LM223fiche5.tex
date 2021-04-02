@@ -1,0 +1,185 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}[section]
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{exercice}[thm]{Ex}{\theorembodyfont{\upshape}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+
+\newcommand{\pmm}[1]{\ \text{#1}} %pour insérer la ponctuation dans les équations hors-texte avec tjrs le même espace
+\newcommand{\std}[1]{\mathbf{#1}}
+\newcommand{\I}[1][]{\std{I}_{#1}} \newcommand{\ind}[1]{\std{1}_{#1}}
+\renewcommand{\ge}{\geqslant} \renewcommand{\le}{\leqslant}
+\newcommand{\eps}{\varepsilon} \newcommand{\truc}{\,\cdot\,}
+
+\DeclareMathOperator{\tr}{tr}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Fiche d'exercices n$^o$ 5}
+\end{center}
+\normalsize
+
+\section{Produit scalaire}
+\begin{exercice}
+Parmi les formes suivantes lesquelles sont des produits scalaires sur $E$:
+\begin{enumerate}
+  \item $E=\R^n$, $n\ge2$ et
+  $\varphi(x,y)=\sum\limits_{i=1}^{n}x_iy_i$,
+    \item $E=\R^{n+1}$, $n\ge2$ et
+  $\varphi(x,y)=\sum\limits_{i=1}^{n}x_iy_i-x_{n+1}y_{n+1}$,
+  \item $E=M_n(\R)$, $n\ge2$ et $\varphi(A,B)=\tr(^{t}\!AB)$,
+  \item $E=M_n(\R)$, $n\ge2$ et $\varphi(A,B)=\tr(AB)$,
+    \item $E=M_n(\R)$, $n\ge2$ et $\varphi(A,B)=\tr(A)\tr(B)$,
+  \item\label{ps:poly} $E=\R_n\lbrack X\rbrack$, $n\ge2$ et
+  $\varphi(P,Q)=\int_{-1}^1P(t)Q(t)dt$,
+    \item $E=\R_n\lbrack X\rbrack$, $n\ge2$ et
+  $\varphi(P,Q)=\int_{-1}^1tP(t)Q(t)dt$,
+    \item $E=\R_n\lbrack X\rbrack$, $n\ge2$ et
+  $\varphi(P,Q)=\int_0^1tP(t)Q(t)dt$,
+  \item $E=\ell^2(\N)=\big\{u=(u_n)_n\in\R^\N\, \big\lvert\, \sum\limits_{n\ge
+  0}u_n^2<+\infty\big\}$ et
+  $\varphi(u,v)=\sum\limits_{n=0}^{\infty}u_nv_n$. \\
+(Dans cette derni\`ere question, commencer par montrer que $\varphi$ est bien
+  d\'efinie.)
+\end{enumerate}
+\end{exercice}
+
+
+\begin{exercice}
+On consid\`ere $E = \mathcal{C}([-1; 1], \R)$ l'espace des fonctions continues sur $[-1; 1]$ \`a valeurs r\'eelles, muni de la forme quadratique \[q : f \mapsto \int_{-1}^1 t f^2(t) dt\pmm.\]
+\begin{enumerate}
+\item Donner la forme polaire $b$ associ\'ee \`a $q$.
+\item Montrer que si $f$ est paire ou impaire $q(f)=0$.
+\item La forme bilin\'eaire $b$ est-elle un produit scalaire?
+\item On consid\`ere la restriction $\tilde{q}$ de $q$ \`a $F=\R_2[X]$. Ecrire la matrice de $\tilde{q}$
+dans $\{1, X, X^2\}$
+ \end{enumerate}
+\end{exercice}
+
+
+\section{Bases orthogonales, bases orthonormales}
+
+\begin{exercice}Appliquer la m\'ethode d'orthonormalisation de Gram-Schmidt dans les cas suivants :
+\begin{enumerate}
+ \item $X = \begin{pmatrix} 1\\2\\-2 \end{pmatrix}$, $Y = \begin{pmatrix} 0\\-1\\2 \end{pmatrix}$, $Z = \begin{pmatrix} -1\\3\\1 \end{pmatrix}$ dans $\R^3$ muni du produit scalaire usuel,
+ \item $P = 1$, $Q = X$, $R= X^2$ dans $\R_2[X]$ muni du produit scalaire $\langle f, g\rangle = \int_0^1 f(t)g(t) dt$.  
+ \item  $P = 1$, $Q = X$, $R= X^2$ dans $\R_2[X]$ muni du produit scalaire $\langle f, g\rangle = \int_0^1 xf(x)g(x)dx$.
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+Sur $\R^3$, montrer que la forme 
+\[f : (x, y) \mapsto (x_1-2x_2)(y_1-2y_2) + x_2y_2 + (x_2+x_3)(y_2+y_3)\]
+ est un produit scalaire. 
+\begin{enumerate}
+ \item Calculer la matrice de $f$ dans la base canonique de $\R^3$.
+ \item \`A l'aide de la méthode de Gram-Schmidt, orthonormaliser la base canonique de $\R^3$ pour le produit scalaire $f$.
+ \item Donner sans calcul la matrice de $f$ dans la nouvelle base ainsi obtenue.
+\end{enumerate}
+\end{exercice}
+
+\newpage
+\begin{exercice}
+On consid\`ere la forme quadratique de $\R^3$ suivante
+$$
+q(x)=x_1^2+5x_2^2+3x_3^2-4x_1x_2-2x_1x_3+2x_2x_3, \quad \forall x=(x_1,x_2,x_3)\in\R^3.
+$$
+\begin{enumerate}
+ \item En utilisant la m\'ethode de r\'eduction de Gauss, trouver une base $\BC$ qui est $q$-orthogonale.
+ \item On note $b$ la forme polaire associ\'ee \`a $q$. Montrer que $b$ est un produit scalaire.
+ \item \`A l'aide de la méthode de Gram-Schmidt, orthonormaliser la base canonique de $\R^3$ pour le produit scalaire $b$. On notera $\BC_0$ la b.o.n obtenue.
+ \item Comparer les bases $\BC$ et $\BC_0$ obtenues pr\'ec\'edemment.
+\end{enumerate}
+
+\end{exercice}
+
+\begin{exercice}
+On consid\`ere la matrice r\'eelle suivante
+$$
+A=
+\begin{pmatrix}
+5&4&-2\\
+4&5&2\\
+-2&2&8
+\end{pmatrix}.
+$$
+Construire une matrice orthogonale $P$ telle que $P^{-1}AP$ soit diagonale.
+\end{exercice}
+
+\begin{exercice}
+On consid\`ere l'espace $\R^3$ muni du produit scalaire euclidien standard $<\,,\,>$.
+Soit $q$ la forme quadratique suivante
+$$
+q(x)=x_1^2-x_3^2-4x_1x_2-4x_2x_3, \quad \forall x=(x_1,x_2,x_3)\in\R^3.
+$$
+Trouver une base de $\R^3$ orthonorm\'ee pour $<\,,\,>$ et $q$-orthogonale.
+\end{exercice}
+
+\begin{exercice}
+Soit $E$ un espace euclidien, de base orthonorm\'ee $\BC_0$. 
+On consid\`ere $\BC$ une base quelconque de $E$, et on note $P$ la matrice de passage de $\BC$ \`a $\BC_0$. 
+Montrer que 
+$$
+\BC \text{ est une base orthonorm\'ee } \Leftrightarrow P \text{ est une matrice orthogonale } 
+$$
+
+\end{exercice}
+
+\end{document}
+
+

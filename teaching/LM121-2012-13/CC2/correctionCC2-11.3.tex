@@ -1,0 +1,192 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+
+\begin{document}
+\large
+\noindent 
+\textbf{Université Pierre et Marie Curie - LM 121 - 2012/2013}\\
+\begin{center}
+\Large 
+Correction du Contrôle continu n 2 MMIME 11.3
+\end{center}
+\medskip
+\noindent
+\textbf{Exercice 1:}\\
+
+\begin{enumerate}
+\item 
+On sait qu'ils sont liés si et seulement si 
+$\det(u,v,w) = 0$.
+Or $\det(u,v,w)=0$ donc ils sont liés. 
+On cherche alors a résoudre le 
+système donné par 
+$au+bv+cw=0$. On trouve par exemple la solution suivante : \\
+$-2u +v+w=0$.
+\item 
+Dire que $z$ est combinaison linéaire de $u,v$ et $w$ équivaut à dire qu'il existe 
+$a,b,c \in \R $ tels que 
+$au+bv+cw=z$. Cela nous donne le système suivant : 
+\[ 
+\begin{array}{cccc}
+a&-b&+3c &=1\\
+2a & +b &+3c &=1 \\
+3a & +2b & +4c & =1
+\end{array}
+\ \Leftrightarrow \ \ 
+\begin{array}{lcccc}
+ & a&-b&+3c &=1\\
+ L_2 \leftarrow L_2 -2L_1 &  & 3b & -3c & =-1 \\
+ L_3 \leftarrow L_3-3L_1 & & 5b & -5c &=-2
+\end{array}\]
+Mais la deuxième ligne donne 
+$b-c= \frac{-1}{3}$ et la troisième 
+$b-c = \frac{-2}{5}$, donc le système n'a pas de solutions, donc $z$ n'est pas combinaison linéaire de 
+$u,v,w$.
+\end{enumerate}
+
+
+
+\medskip
+\noindent
+\textbf{Exercice 2:}\\
+\begin{enumerate}
+\item 
+On peut par exemple paramétrer $D_1$ par $y$, et $D_2$ par $z$ et on en déduit les équations paramétriques suivantes :
+\[
+D_1 :  
+\begin{cases}
+x &= 2+t \\
+y&=t \\
+z &=11+2t
+\end{cases}
+\hspace{2cm}
+D_2 : 
+\begin{cases}
+x &= \lambda-1 \\
+y & =2\lambda+2\\
+z & = \lambda
+\end{cases}\]
+Dire qu'un point $M$ de l'espace est à la fois dans $D_1$ et $D_2$, équivaut à dire qu'il existe un 
+paramètre $t$ tel que $M = (2+t,t,11+2t)$ (i.e. $M\in D_1$), et qu'il existe un parametre 
+$\lambda$ tel que $M=(\lambda-1 , 2\lambda +2,\lambda)$. Cela amène à résoudre les solutions en 
+$\lambda$ et $t$ du système 
+\[ 
+\begin{matrix}
+2&+t&=&\lambda-1 \\
+&t &= &2\lambda +2 \\
+11&+2t &=&\lambda
+\end{matrix} 
+\hspace{10pt} \Leftrightarrow \hspace{10pt}
+\begin{matrix}
+t&-\lambda &=&- 3\\
+t&-2\lambda &=&2 \\
+2t&-\lambda &=&-11
+\end{matrix}
+\hspace{10pt} \Leftrightarrow \hspace{10pt}
+\begin{matrix}
+ &  t&-\lambda & =& -3 \\
+L_2\leftarrow L_2-L_1 & &-\lambda &=&5 \\
+L_3 \leftarrow L_3-2L_1 & & \lambda &=&-5
+\end{matrix}
+\]
+Les deux dernières équations étant les mêmes, le sytème équivaut au suivant :
+\[
+\begin{cases}
+  t-\lambda & = -3 \\
+ -\lambda &=5 
+\end{cases}\]
+qui admet une unique solution 
+$\lambda =-5$ et $t=-8$. En remplaçant cette valeur de $\lambda$ (resp. $t$) dans la 
+paramétrisation de $D_1$ (resp. $D_2$), 
+on obtient le même point, et on en déduit que 
+$D_1\cap D_2$ est réduit à un point qui est 
+$A=(-6,-8,-5)$. (En particulier, les droites sont concourantes).
+\item D'après la question précédente, $D_1$ passe par $A$ et a pour vecteur directeur 
+$u=\begin{pmatrix}
+1\\1\\2
+\end{pmatrix}$. De même $D_2$ passe par $A$ et a pour vecteur directeur 
+$v=\begin{pmatrix}
+1\\2\\1
+\end{pmatrix} $.
+Ainsi, comme ces deux droites sont concourantes, et non confondues (car leurs vecteurs directeurs 
+ne sont pas colinéaires) il existe bien un unique plan qui les contient, 
+$\mathcal{P}$, qui est le plan passant par $A$ de vecteurs directeurs $u,v$. 
+\[u \wedge v = 
+\begin{pmatrix}
+1\\1\\2
+\end{pmatrix}
+\wedge
+\begin{pmatrix}
+1\\2\\1
+\end{pmatrix}
+=
+\begin{pmatrix}
+-3\\1\\1
+\end{pmatrix}\]
+On en déduit donc qu'une équation cartésienne de 
+$\mathcal{P}$ est donnée par 
+\[-3x+y+z=a\] 
+pour une certaine constante $a$. En utilisant le fait que $A$ est dans $\mathcal{P}$, 
+on trouve $a=5$ soit l'équation 
+\[ \mathcal{P} \ : \ -3x+y+z=5\]
+\end{enumerate}
+
+
+
+
+\medskip
+\noindent
+\textbf{Exercice 3:}\\ 
+Il faut juste calculer correctement les deux membres de l'égalité.
+
+
+\medskip
+\noindent
+\textbf{Exercice 4:}\\
+
+En complexe, on obtient 
+$f(z) = iz$ et  
+$g(z) = 3+i+iz$. 
+Et finalement $g\circ f(z) = 3+i-z$.
+Le point fixe $z_0$ de $g\circ f $ doit être la solution de l'équation $g\circ f(z_0)=z_0$.
+Et après un calcul on trouve  
+$z_0= \frac{3+i}{2}$. Ainsi, 
+$g\circ f$ est une rotation de centre $(\frac{3}{2}, \frac{1}{2})$, et d'angle $-\pi$ (c'est en fait une symétrie centrale). 
+
+
+\end{document}
+
+\bibliographystyle{plain}
+\bibliography{bibli}

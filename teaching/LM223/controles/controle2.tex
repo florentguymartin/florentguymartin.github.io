@@ -1,0 +1,172 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+\title{Fiche 1\\Espaces Vectoriels, Applications linŽaires}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Interro n$^o$ 2}
+\end{center}
+\normalsize
+
+\medskip
+\noindent
+\textbf{Question de cours :}\\
+\begin{enumerate}
+\item 
+Donner la définition d'une forme bilinéaire symétrique ainsi que celle d'un produit scalaire.
+\item Sur $\R^3$ donner quatre formes quadratiques $q_1, q_2, q_3$ et $q_4$ différentes 
+telles que $q_1$ et $q_2$ soient des produits scalaires, 
+$q_3$ soit de signature $(2,1)$ et $q_4$ soit dégénérée.
+
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 1:}\\
+\begin{enumerate}
+\item 
+Soit $M = 
+\begin{pmatrix}
+-2 & 4 & -9 \\
+3 & -1 & 3 \\
+2 & -2 & 5
+\end{pmatrix}$.
+$M$ est-elle diagonalisable? Si oui la diagonaliser (i.e. donner une base de vecteurs propres). 
+\item 
+Même question avec 
+$N = 
+\begin{pmatrix}
+5 & -1 & -2 \\
+-5 & 3 & 3 \\
+9 & -3 & -4
+\end{pmatrix}$.
+\end{enumerate}
+
+
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+Sur $\R^3$ soit $q$ la forme quadratique définie par 
+$q(x) = x_1^2 +7x_2^2 +12x_3^2 +4x_1x_2 -2x_1x_3 -16x_2x_3$. 
+\begin{enumerate}
+\item Donner la matrice $M$ de $q$ dans la base canonique de $\R^3$.
+\item Donner une base orthogonale pour $q$.
+\item Quelle est la signature de $q$?
+\item Trouver un élément $x\in \Z^3$ tel que $q(x) =-1$.
+\end{enumerate}
+\medskip
+\noindent
+\textbf{Exercice 3:}\\
+Sur $\R^3$ soit $q$ la forme quadratique définie par 
+$q(x) = x_1x_2 -2x_1x_3 +4x_2x_3$. On note $M$ la matrice de $q$ dans la base canonique de 
+$\R^3$.
+Trouver $P \in$ GL$_3(\R)$ telle que 
+$^tPMP$ soit une matrice diagonale.
+
+
+\bigskip
+\noindent
+\textbf{Exercice 4:}\\
+Soit 
+\[ \begin{array}{rccc}
+q:& \R_2[X] &\to & \R \\
+& P & \mapsto & P(1)P(-1)
+\end{array} \]
+\begin{enumerate}
+\item 
+Justifier que $q$ est une forme quadratique, en donnant la forme polaire associée à $q$.
+\item 
+Donner la matrice de $q$ dans la base canonique de 
+$\R_2[X]$, i.e. $\{1,X,X^2 \}$. 
+\item Déterminer la signature de $q$.
+\item Montrer que $\mathcal{B} = \{X-1,X+1,X^2-1\}$ est une base de $\R_2[X]$.
+\item Calculer la matrice de $q$ dans la base $\mathcal{B}$. 
+\end{enumerate}    
+
+
+\bigskip
+\noindent
+\textbf{Exercice 5:}\\
+Soit la forme quadratique de $\R^3$, 
+$q(x) = x_1^2 +3x_2^2 -8x_3^2$.
+Soit $F=\{(x_1,x_2,x_3) \in \R^3 \ \big| \ x_1+x_2+x_3 =0 \}$ le sous-espace vectoriel de $\R^3$.
+Alors, $q_{|F}$ induit une forme quadratique sur $F$.\\
+Donner la dimension de $F$, et calculer la signature de $q_{|F}$ qu'on voit comme 
+une forme quadratique sur $F$.
+
+\bigskip
+\noindent
+\textbf{Exercice 6:}\\
+\begin{enumerate}
+
+\item Soit $q$ une forme quadratique sur $\R^3$. Déterminer, suivant la signature de 
+$q$, s'il existe $x\in \R^3 \setminus \{0\}$ tel que $q(x)=0$.
+\item Soit $n\geq 2$ et $q$ une forme quadratique sur $\C^n$. Montrer qu'il existe 
+$x\in \C^n \setminus \{0\}$ tel que $q(x)=0$. 
+\end{enumerate}
+
+\end{document}
+
+

@@ -1,0 +1,310 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Correction de l'examen final, 16 janvier 2013}
+\end{center}
+\normalsize
+
+\medskip
+\noindent
+\textbf{Exercice 1:}\\
+\begin{enumerate}
+\item
+On pouvait prendre par exemple
+$\begin{pmatrix}
+1&0\\0&-1
+\end{pmatrix}
+, \begin{pmatrix}
+-1&0\\0&1
+\end{pmatrix}, 
+\begin{pmatrix}
+0&1\\1&0
+\end{pmatrix}$.
+\item Par définition, 
+$P\in O(3)$ si et seulement si 
+$^tPP=I_3$ (idem pour $Q$ et $PQ$). 
+Ainsi, si $P,Q \in O(3)$, 
+$^t(PQ)PQ = ^tQ^tPPQ = ^tQ I_3 Q = ^tQQ=I_3$, 
+donc $PQ \in O(3)$.
+
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+
+\begin{enumerate}
+\item 
+Im$(f) =$Vect$( (2,1,0) , (1,0,2))$. Comme ces deux vecteurs sont libres, il s'agit d'un plan de 
+$\R^3$. 
+De plus, 
+$\begin{pmatrix}
+2\\1\\0
+\end{pmatrix}
+\wedge 
+\begin{pmatrix}
+1\\0\\2
+\end{pmatrix}
+=\begin{pmatrix}
+2\\-4\\-1
+\end{pmatrix}$, et on en déduit que 
+Im$(f) = \{ (x,y,z) \in \R^3 \ \big| \ 2x-4y-z =0 \}$.
+
+\item Comme 
+$2-4-1 \neq 0$, $v\notin $ Im$(f)$.
+\item D'après le cours, il existe un unique vecteur $w \in$ Im$(f)$ qui réalise le 
+minimum pour 
+$\|w-v\|$, et $w$ est la projection orthogonale de $v$ sur 
+Im$(f)$. Comme on connaît un vecteur orthogonal à 
+Im$(f)$, à savoir 
+$(2,-4,-1)$, on sait que 
+\[
+v = w + (2,-4,-1) \frac{(v| (2,-4,-1))}{\|(2,-4,-1)\|^2} \ \text{soit} \]
+\[
+(1,1,1) = w + (2,-4,-1)\frac{-1}{7} \]
+Ainsi 
+$w = (1,1,1) + (\frac{2}{7}, -\frac{4}{7} , -\frac{1}{7}) = (\frac{9}{7},\frac{3}{7},\frac{6}{7})$. \\
+Maintenant, comme $f$ réalise une bijection de 
+$\R^2$ sur son image à savoir Im$(f)$, on en déduit qu'il existe un unique 
+$u\in \R^2$ tel que $f(u)=w$, et que ce $u$ est l'unique vecteur de $\R^2$ à 
+atteindre le minimum pour 
+$\|f(u)-v\|$, et $u$ est l'unique antécédent de $w$ pour $f$.
+Si on pose $u=(u_1,u_2)$, cela nous donne 
+$u_1(2,1,0) + u_2(1,0,2) = ( \frac{9}{7},\frac{3}{7},\frac{6}{7})$ soit 
+\[ \begin{matrix}
+2u_1 & +u_2 & =\frac{9}{7}\\
+u_1 &&=\frac{3}{7}\\
+ & 2u_2 & =\frac{6}{7}
+ \end{matrix}\]
+ et on vérifie que la seule solution de ce système est 
+ $u=(\frac{3}{7},\frac{3}{7})$.\\
+ Au passage, $\|w-u\| = \|( \frac{2}{7}, -\frac{4}{7}, -\frac{1}{7} \| = \frac{\sqrt{21}}{7}$.
+\item 
+Si on note $s$ cette symétrie, on sait que pour 
+$p\in \R^3$, 
+$s(p) = p-2 (2,-4,-1) \frac{(p| (2,-4,-1))}{\|(2,-4,-1)\|^2}$. 
+En posant 
+$p=(x,y,z)$, cela donne \\
+\begin{align*}
+s(x,y,z) &= (x,y,z) - \frac{(4,-8,-2)}{21}(2x-4y-z) \\
+       & = \frac{1}{21} ( 
+(21x,21y,21z) + (-4,8,2)(2x-4y-z) )  \\
+ &=\frac{1}{21} ( 
+(21x,21y,21z) +( -8x+16y+4z,16x-32y-8z, 4x-8y-2z) ) \\
+&= \frac{1}{21} ( 13x +16y+4z, 16x -11y-8z, 4x-8y+19z ) 
+\end{align*}
+La matrice de $s$ est donc 
+$\frac{1}{21}
+\begin{pmatrix}
+13 & 16&4\\
+16&-11&-8\\
+4&-8&19
+\end{pmatrix}$.
+
+\end{enumerate}
+\medskip
+\noindent
+\textbf{Exercice 3:}\\
+
+\begin{enumerate}
+\item 
+La matrice cherchée est 
+$M= 
+\begin{pmatrix}
+3&0&2\\
+0&1&2\\
+2&2&2\\
+\end{pmatrix}$
+\item 
+Comme la matrice $M$ est symétrique réelle, elle est diagonalisable dans une base orthonormée, 
+et on va chercher $P \in O(3)$ telle que 
+$P^{-1}MP$ soit diagonale. Comme $P^{-1} = {^tP}$, la base associée à $P$ conviendra alors. 
+On a \\ 
+$\chi_M (X) = 
+\begin{vmatrix}
+3-X & 0&2\\
+0&1-X & 2 \\
+2&2&2-X
+\end{vmatrix} 
+= (3-X) ( (1-X)(2-X) -4) +2(-(1-X)2) $ \\
+$=
+(3-X)(X^2-3X -2) +4X -4 
+=-X^3 +6X^2 -3X -10$. \\
+On constate que $-1$ est racine, et on en déduit que 
+$\chi_M(X) = -(X+1)(X^2-7X+10)$. \\
+Enfin après factorisation, on trouve que  
+$X^2-7X+10 = (X-2)(X-5)$, ainsi, 
+$\chi_M(X) =-(X+1)(X-2)(X-5)$ et $M$ a trois valeurs propres distinctes qui sont 
+$-1,2,5$.\\ 
+Après calcul, on trouve que les espaces propres associés sont \\
+$E_{-1} = $ Vect$(1,2,-2)$ , $E_2=$ Vect$(-2,2,1)$, $E_5=$ Vect$(2,1,2)$. \\
+Ce sont des vecteurs de norme $3$, et on en déduit que 
+$\mathcal{B}= 
+\{ ( \frac{1}{3},\frac{2}{3},-\frac{2}{3} ) , (-\frac{2}{3}, \frac{2}{3}, \frac{1}{3}) , 
+(\frac{2}{3}, \frac{1}{3}, \frac{2}{3} ) \}$ est une BON de vecteurs propres de $M$. 
+Ainsi si $P$ est la matrice associée à $\mathcal{B}$, i.e. 
+$P= 
+\begin{pmatrix}
+\frac{1}{3} &-\frac{2}{3} &\frac{2}{3} \\
+\frac{2}{3} & \frac{2}{3} & \frac{1}{3} \\ 
+-\frac{2}{3} & \frac{1}{3} & \frac{2}{3}
+\end{pmatrix}$, 
+alors $^tP=P^{-1}$ et donc 
+$P^{-1}MP = ^tPMP = 
+\begin{pmatrix}
+-1&0&0\\
+0&2&0 \\
+0&0&5
+\end{pmatrix}$, 
+et donc $\mathcal{B}$ est une base orthonormée qui est orthogonale pour $q$.
+
+\item D'après ce qu'on a fait à la question précédente, on sait 
+que 
+$q( ( \frac{1}{3}, \frac{2}{3}, -\frac{2}{3}) ) =-1$, la réponse est donc oui, avec comme 
+possibilité 
+$u=(\frac{1}{3}, \frac{2}{3}, -\frac{2}{3})$. 
+
+\item 
+Soit 
+$x',y',z'$ les coordonnées de $v$ dans la base 
+$\mathcal{B}$.
+Alors 
+$\|v\|^2 = x'^2 +y'^2 +z'^2$ car 
+$\mathcal{B}$ est une BON. 
+Par ailleurs, 
+$q(v) = -x'^2 +2y'^2 +5z'^2$ d'après la question $2)$. 
+Ainsi si $\|v\| \leq 1$, 
+$x'^2 +y'^2+z'^2 \leq 1$ et
+ \[-1 \leq -(x'^2+y'^2+z'^2) \leq q(v) =  -x'^2 +2y'^2 +5y'^2 \leq 5(x'^2+y'^2+z'^2) \leq 5\]
+
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 4:}\\
+Soit 
+\[
+\begin{array}{cccc}
+f : & \R_2[X]\times \R_2[X] & \to & \R \\
+    &  (P,Q)  & \mapsto & \int_{-1}^1 xP(x)Q(x)dx
+    \end{array}
+    \]
+    
+\begin{enumerate}
+\item 
+Par linéarité de l'integrale 
+$f(\lambda P_1 +P_2,Q) = 
+\lambda f(P_1,Q) + f(P_2,Q)$ et de plus 
+$f(P,Q) = f(Q,P)$.
+\item 
+On calcule les valeurs prises par $f$ sur les éléments de cette base. On trouve : 
+\[
+\begin{matrix}
+f(1,1) & = \int^1_{-1}xdx   &=0 \\
+f(1,X) & = \int^1_{-1} x^2dx   &=\frac{2}{3} \\
+f(1,X^2) & = \int^1_{-1}x^3dx   &=0 \\
+f(X,X) & = \int^1_{-1}x^3dx   &=0 \\
+f(X,X^2) & = \int^1_{-1}x^4dx   &= \frac{2}{5} \\
+f(X^2,X^2) & = \int^1_{-1}x^5dx   &= 0
+\end{matrix} \]
+On en déduit que 
+$M = 
+\begin{pmatrix}
+0 & \frac{2}{3} & 0 \\
+\frac{2}{3} & 0 & \frac{2}{5} \\
+0& \frac{2}{5} & 0
+\end{pmatrix}$.
+\item En posant $a,b,c$ les coordonnées dans la base 
+$\mathcal{B}$, la forme quadratique s'écrit donc 
+$q(a,b,c) = 
+\frac{4}{3} ab + \frac{4}{5}bc$. \\
+On peut calculer la signature de $q$ sans faire trop de calculs. 
+Tout d'abord, on remarque facilement que $\det (M)=0$ (par exemple car la première et la troisième colonnes 
+sont colinéaires). Par ailleurs les deux premières colonnes de $M$ sont libres, ainsi 
+rang$(q)=$rang$(M) =2$. Ainsi la signature ne peut être que 
+$(2,0), (1,1)$ ou $(0,2)$. 
+Cependant, en prenant $a,b,c>0$, on voit que $q(a,b,c) >0$, ainsi la signature 
+$(0,2)$ est impossible (car dans ce cas, $q$ serait négative). 
+De même, si on prend $a,c>0$ et $b<0$, alors 
+$q(a,b,c) <0$, ainsi la signature $(2,0)$ est également impossible. 
+C'est donc que la signature de $q$ est $(1,1)$.  \\
+On aurait aussi pu calculer la signature en mettant la forme $q$ sous forme de carrées linéairement indépendants. 
+Par exemple en posant 
+$a'=a+b, b'=a-b$ et $c'=c$, on obtient que 
+$q =  \frac{1}{3} ( a' + \frac{3}{5}c')^2 - \frac{1}{3} ( b'+ \frac{3}{5}c')^2$, ce qui nous 
+redonne le même résultat.
+\end{enumerate}
+
+
+
+
+
+
+
+\end{document}
+
+

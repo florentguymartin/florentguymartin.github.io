@@ -1,0 +1,357 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+\title{Fiche 1\\Espaces Vectoriels, Applications linŽaires}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Correction de l'Interro n$^o$ 1}
+\end{center}
+\normalsize
+
+\medskip
+\noindent
+\textbf{Exercice 1:}(1 point pour le déterminant, 3 points pour l'inverse)\\
+
+Det$(M)=1$, donc comme le déterminant est non nul, $M$ est inversible, et $M^{-1} = 
+\begin{pmatrix}
+-1 & 1&0\\
+-3&0&2\\
+2&0&-1
+\end{pmatrix}
+.$
+
+\bigskip
+\noindent
+\textbf{Exercice 2:} \\
+
+
+\begin{enumerate}
+\item ($\frac{1}{2}$ \emph{point}) dim$(\mathbf{F}) =2$. On vérifie par exemple que 
+$\{ \begin{pmatrix}
+1 & 0\\0&1
+\end{pmatrix}
+, \begin{pmatrix}
+0&1\\-1&0
+\end{pmatrix} \}$ forme une base.
+\item ($\frac{1}{2}$ \emph{point} ) On vérifie que 
+$f(\lambda M + N) = \lambda f(M) +f(N)$. 
+\item (\emph{1 point}) $f$ est clairement bijective. En effet :\\
+si $f\begin{pmatrix}
+a&b\\-b&a
+\end{pmatrix}
+=a+ib =0$ alors $a=b=0$, donc Ker$(f) = \{\begin{pmatrix}
+0&0\\0&0
+\end{pmatrix}\}$ donc $f$ est injective. \\
+Et par définition, $f$ est surjective : si $z\in \C$, $z=a+ib$ avec $a,b\in \R$, donc 
+$z=f \begin{pmatrix}
+a & b\\ -b&a
+\end{pmatrix}$.
+\item (\emph{ 1 point})$\begin{pmatrix}
+a&b\\ -b&a
+\end{pmatrix} \begin{pmatrix}
+x&y\\-y&x
+\end{pmatrix} = \begin{pmatrix}
+ax-by & ay+bx \\ -(ay +bx) & ax-by
+\end{pmatrix}$
+\item (\emph{ 1 point}) Donc 
+$f \left( \begin{pmatrix}
+a&b\\ -b&a
+\end{pmatrix} \begin{pmatrix}
+x&y\\-y&x
+\end{pmatrix} \right) = f \left( \begin{pmatrix}
+ax-by & ay+bx \\ -(ay +bx) & ax-by
+\end{pmatrix} \right) =(ax-by) +i(ay+bx) = (a+ib)(x+iy) = 
+f\begin{pmatrix}
+a&b\\ -b&a
+\end{pmatrix} 
+f\begin{pmatrix}
+x&y\\-y&x
+\end{pmatrix} $
+\end{enumerate}
+
+\medskip
+\noindent
+\textbf{Exercice 3:}\\
+\begin{enumerate}
+\item (\emph{ 1 point})
+$P_M(X)=$ Det$(XId -M) = X^3+3X^2-4 = (X-1)(X+2)^2$.
+\item (\emph{ 3 points})Les valeurs propres sont $1$ (de multiplicité $1$) 
+et $-2$ (de multiplicité $2$). Après calcul, 
+l'espace propre associé à $-2$ est \\ 
+$E_{-2} = \{ (x,y,z) \in \K^3 \ \big| \ x+y+z=0 \} =$Vect$\left( 
+\begin{pmatrix}
+-1\\0\\1
+\end{pmatrix}
+, \begin{pmatrix}
+-1 \\1\\0
+\end{pmatrix}
+\right)$. \\
+De même, 
+$E_{1} =$Vect$( \begin{pmatrix}
+1\\1\\1
+\end{pmatrix} )$.
+\item (\emph{ 1 point})
+Donc $M$ est diagonalisable, car la multiplicité algébrique des valeurs propres correspond 
+à la dimension des espaces propres associés. Et 
+$P= \begin{pmatrix}
+-1&-1&1\\
+0&1&1\\1&0&1
+\end{pmatrix}$ convient.
+\end{enumerate}
+\bigskip
+\noindent
+\textbf{Exercice 4:}\\
+\begin{enumerate}
+\item (\emph{ 1 point})
+$F$ est un hyperplan, i.e. le noyau d'une forme linéaire non nulle, en l'occurence 
+le noyau de la forme \\
+\[\begin{array}{cccc}
+\Psi :&\C^4 &\to &\C \\
+     & (x,y,z,t) & \mapsto & x+y+z+t
+\end{array}\]
+Donc dim$(F) = 4-1=3$.
+\item (\emph{ 1 point}) On vérifie que c'est une famille libre, dont le nombre d'éléments, 3, est la dimension de $F$. 
+\item (\emph{ 1 point})
+Si $(x,y,z,t) \in F$, alors 
+si on note $\varphi(x,y,z,t) =(a,b,c,d)$, on obtient : 
+\[ a+b+c+d = (x+3y+t) + (3x-2y) +(-2x+2y+z) +(-y+z+t) = 2(x+y+z+t)=2.0=0\]
+Donc $\varphi(x,y,z,t) \in F$. 
+Ensuite, $\varphi$ est clairement linéaire, et 
+\[\begin{array}{ccc}
+\varphi(e_1) & = (0,3,-2,-1) &= 0e_1+3e_2-2e_3 \\
+\varphi(e_2) &= (2,-2,2,-2) &= 2e_1 -2e_2 +2e_2 \\
+\varphi(e_3) &=(-1,0,1,0) &= -e_1 +0e_2 +e_3
+\end{array}\]
+ On en déduit que $M=$ Mat$_{\mathcal{B}}(\varphi) = 
+ \begin{pmatrix}
+ 0&2&-1\\
+ 3&-2&0\\
+ -2&2&1
+ \end{pmatrix}$.
+
+\item (\emph{ 3 points})
+$P_M(X) = X^3+X^2-10X+8 =(X-1)(X-2)(X+4)$. 
+C'est une polynôme scindé à racines simples donc $M$ est diagonalisable. 
+En notant $v_{\lambda}$ un vecteur propre pour $\lambda$, on obtient par exemple : \\
+$v_1 = \begin{pmatrix}
+1\\1\\1
+\end{pmatrix}, \
+v_2 = \begin{pmatrix}
+-4\\-3\\2
+\end{pmatrix}, \ \text{et} \ 
+v_{-4} = \begin{pmatrix}
+2\\-3\\2
+\end{pmatrix}$
+pour les vecteurs propres de $M$, i.e les cooordonées des vecteurs propres 
+de $\varphi$ dans la base $\mathcal{B}$. \\
+Si on veut être précis, en réutilisant la base $\mathcal{B}$, en en déduit que \\
+$u_1 = \begin{pmatrix}
+1\\1\\1\\-3
+\end{pmatrix}, \ 
+u_2 = \begin{pmatrix}
+-4\\-3\\2\\5
+\end{pmatrix}, \ \text{et} \ 
+u_{-4} = \begin{pmatrix}
+2\\-3\\2\\-1
+\end{pmatrix}$ forment une base de vecteurs propres de $\varphi$ pour les valeurs propres $1,2,-4$.
+ 
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 5:}\\
+\begin{enumerate}
+\item (\emph{ 1 point})
+Si $M,N \in \mathcal{C}_A$, $\mu \in \C$, alors 
+$(\mu M +N)A = \mu(MA) + NA = A (\mu M) + AN = A(\mu M +N)$ 
+donc $\mu M+N \in \mathcal{C}_A$.
+\item (\emph{ 1 point})
+Si $Au = \lambda u$ alors $A(Mu) = AMu=MAu=M(\lambda u) = \lambda (Mu)$, donc 
+$Mu \in E_{\lambda}$.
+
+\item (\emph{3 points} )
+On distingue trois cas : 
+\begin{description}
+\item[trois valeurs propres distinctes] Supposons que $A$ ait trois valeurs propres différentes 
+$\lambda_1, \lambda _2, \lambda_3$, pour des vecteurs propres respectifs 
+$v_1, v_2,v_3$ qui forment une base de $\C^3$. Cela signifie que si on regarde l'endomorphisme de $\C^3$ associé à $A$ dans la base
+$\mathcal{B} =\{v_1,v_2,v_3 \}$, on obtient la matrice diagonale 
+$\begin{pmatrix}
+\lambda_1 &0&0\\
+0&\lambda_2 &0\\
+0&0&\lambda_3
+\end{pmatrix}$.
+Par ailleurs, si $M$ commute avec $A$, i.e. si $M \in \mathcal{C}_A$, la question précédente nous dit :\\
+puisque $v_1$ est une valeure propre de $A$ (pour la valeur propre $\lambda_1$), i.e. 
+$v_1 \in E_{\lambda_1}$, alors 
+$Mv_1 \in E_{\lambda_1} = $Vect$(v_1)$. Donc il existe 
+$a\in \C$ tel que $Mv_1 = av_1$ \\
+Le même raisonnement nous donne 
+$M(v_2)  \in E_{\lambda_2}$ donc il existe 
+$b\in \C$ tel que $Mv_2 = bv_2$ et 
+$Mv_3 \in E_{\lambda_3}$ donc il existe 
+$c\in \C$ tel que $Mv_3 = cv_3$.
+Ainsi la matrice de $M$, vue dans la base 
+$\mathcal{B}$ doit être 
+ $\begin{pmatrix}
+a &0&0\\
+0&b &0\\
+0&0&c
+\end{pmatrix}$. \\
+Réciproquement, les matrices de cette forme commutent à $A$, i.e. 
+si $M(v_1) =a v_1$, alors $MA(v_1) = M(\lambda_1v_1) = \lambda_1 Mv_1 = \lambda_1 av_1$ et 
+$AM(v_1) = A(av_1) =\lambda_1av_1$, donc $AM(v_1) =MA(v_1)$. On montre de même 
+que $AM(v_2) =MA(v_2)$ et $AM(v_3) =MA(v_3)$. Donc comme $\{v_1,v_2,v_3\}$ est une base de $\C^3$, 
+$AM=MA$.\\ 
+Si on veut résumer de manière précise, notons $P$ la matrice de passage de la base canonique de $\C^3$ à la base $\mathcal{B}$. Alors 
+\[M\in \mathcal{C}_A  \Leftrightarrow P^{-1}MP \in \mathcal{D}\]
+où 
+$\mathcal{D} = \left\{ \begin{pmatrix}
+a &0&0\\
+0&b &0\\
+0&0&c 
+\end{pmatrix} \Big| \ a,b,c\in \C \right\}
+$. 
+$\mathcal{D}$ est clairement un sous-espace vectoriel de dimension $3$ de $M_3(\C)$, donc 
+$\mathcal{C}_A$ est aussi de dimension 3.\\ 
+\emph{ Quelque part, on utilise le fait que comme} $P$ \emph{est une matrice
+inversible, l'application}
+\[\begin{array}{ccc}
+M_3(\C) & \to & M_3(\C) \\
+M  & \mapsto & P^{-1}MP
+\end{array}\]
+est un isomorphisme, donc en particulier préserve les dimensions.
+
+\item[si on a une valeur propre double, et une simple]
+ Disons que $\lambda_1$ est valeur propre double de $A$ avec $u,v$ comme base de 
+ $E_{\lambda_1}$ et $\lambda_2$ valeur propre simple avec vecteur propre $w$. 
+ On note encore $\mathcal{B}=\{u,v,w\}$ et $P$ la matrice de passage de la base 
+ canonique de $\C^3$ à $\mathcal{B}$. Alors le même raisonnement qui dans le cas précédent  nous dit que  
+\[M\in \mathcal{C}  \Leftrightarrow P^{-1}MP \in \mathcal{F}\]
+où $\mathcal{F} = \left\{ \begin{pmatrix}
+a &b&0\\
+c&d &0\\
+0&0&e 
+\end{pmatrix} \Big| \ a,b,c,d,e\in \C \right\}
+$\\
+On en déduit de même que dim$(\mathcal{C}_A)$ dans ce cas est 5.
+
+\item[trois valeurs propres identiques] Dans ce cas, si $\lambda$ est la valeur propre 
+triple, cela signifie que 
+$A= \lambda Id$. Dans ce cas toutes les matrices $M$ commutent à $A$. Donc 
+$\mathcal{C}_A = M_3(\C)$ est de dimension $9$.
+
+\item[Pour résumer :] suivant les éventuelles multiplicités des valeurs propres on obtient 
+\begin{center}
+\begin{tabular}{|l|r|}
+\hline
+Multiplicité des valeurs propres de $A$ & dim$(\mathcal{C}_A)$ \\
+\hline
+3 valeurs propres distinctes $\lambda_1,\lambda_2,\lambda_3$ & 3 \\
+2 valeur propres : une double $\lambda_1$ et une simple $\lambda_2$ & 5 \\
+1 valeur propre triple $\lambda$ (et $A= \lambda Id$) & 9\\
+\hline
+\end{tabular}
+\end{center}
+
+\end{description} 
+
+\item (\emph{1 point}) 
+Ici on est justement dans le 1° cas, avec trois valeurs propres distinctes, et comme la base canonique 
+est une base de vecteurs propres, ici avec les notations de la question précédente, $P=Id$ et 
+$\mathcal{C}_D = \mathcal{D} = \left\{ \begin{pmatrix}
+\alpha &0&0\\
+0& \beta &0\\
+0&0&\gamma 
+\end{pmatrix} \Big| \ \alpha,\beta,\gamma \in \C \right\}
+$ le sous-espace des matrices diagonales, qui est de dimension 3. \\
+En fait on peut trouver ce résultat à la main en prenant une matrice quelconque 
+$M=\begin{pmatrix}
+r&s&t\\
+u&v&w\\
+x&y&z
+\end{pmatrix}$. Alors 
+$DM = \begin{pmatrix}
+ar&as&at\\
+bu&bv&bw\\
+cx&cy&cz
+\end{pmatrix}$ et 
+$MD = \begin{pmatrix}
+ar&bs&ct\\
+au&bv&cw\\
+ax&by&cz
+\end{pmatrix}$
+et on déduit que $u=x=y=s=t=w=0$. Par exemple en identifiant le coefficient  $(2,1)$, i.e. sur la 2° ligne 
+et la 1° colonne, on obtient $bu=au$ soit $(b-a)u=0$, mais comme $a\neq b$ par hypothèse, il ressort que $u=0$, donc 
+$M = \begin{pmatrix}
+      r&0&0 \\ 0&v&0 \\0&0&z
+     \end{pmatrix}$
+i.e. $M\in \mathcal{D}$.
+\end{enumerate}
+
+
+
+\end{document}
+
+

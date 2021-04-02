@@ -1,0 +1,423 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+%\pagestyle{empty} ça enlève la numerotation des pages
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+\title{Fiche 1\\Espaces Vectoriels, Applications linŽaires}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Correction de l'Interro n$^o$ 2}
+\end{center}
+\normalsize
+
+
+\bigskip
+\noindent
+\textbf{Exercice 1:}\\
+\begin{enumerate}
+\item 
+On commence par calculer le polynôme caractéristique de $M$. Pour cela, on 
+peut calculer $\det(M-XI)$ ou $\det(XI-M)$, ce qui donne le 
+même résultat au signe près. Je prends la première solution : \\ 
+
+\begin{align*}
+P_M(X) =\det(M-XI) &  = 
+\begin{vmatrix}
+-2 -X & 4 & -9 \\
+3 & -1-X & 3 \\
+2 & -2 & 5-X
+\end{vmatrix} \\  
+& = 
+(-2-X) \begin{vmatrix}
+-1-X & 3 \\
+-2 & 5-X
+\end{vmatrix}
+ -3\begin{vmatrix}
+ 4 & -9 \\
+ -2 & 5-X
+ \end{vmatrix}
+ +2 \begin{vmatrix}
+ 4 & -9 \\
+ -1-X & 3
+ \end{vmatrix} \\
+  & \text{(On a développé par rapport à la première colonne)} \\
+ &  =-(2+X)(-(1+X)(5-X) +6) -3( 4(5-X) -18) +2(12 -9(1+X) )  \\
+ &=-(2+X)(-(5+4X-X^2)+6) -3(2-4X) +2(3-9X)  \\
+ &= -(2+X)(X^2-4X+1) -6+12X +6 -18X  \\
+ &=-(X^3 -2X^2 -7X +2) -6X  \\
+ &= -X^3 +2X^2 +X -2 
+ \end{align*}
+  
+On remarque que $1$ est une racine de $P_M$, on obtient alors 
+$P_M(X) = -(X-1)(X^2-X-2) = -(X-1)(X+1)(X-2)$. La polynôme caractéristique de 
+$M$ est donc scindé à racines simples, on sait donc qu'il est diagonalisable et que la dimension de chacun 
+des espaces propres sera $1$. 
+Pour calculer $E_{\lambda}$, l'espace propre associé à $\lambda$, il faut calculer le noyau de $M-\lambda I$.
+On trouve 
+$E_1 = $Vect$\begin{pmatrix}1 \\ 3 \\ 1   \end{pmatrix} $, 
+$E_{-1} = $Vect$\begin{pmatrix} -1 \\ 2 \\1   \end{pmatrix}$ et  
+$E_2 = $Vect$\begin{pmatrix} 1\\1\\0  \end{pmatrix}$.   
+\item 
+Le calcul du polynôme caractéristique donne 
+$P_N(X) = X^3 -4X^2+5X -2$ (ici j'ai calculé $\det(XI-N)$). 
+On constate que $1$ est racine, et on obtient 
+$P_N(X) = (X-1)^2(X-2)$. Comme $1$ est racine double, pour que $N$ soit 
+diagonalisable, il faut que la dimension de $E_1$, l'espace propre associé à $1$ soit de 
+dimension $2$. 
+Mais lorsqu'on calcule $E_1 = \ker (N-I)$, on trouve que 
+$E_1 =$Vect$(\begin{pmatrix} 1 \\ -2 \\ 3 \end{pmatrix} ) $ est de dimension $1$ donc 
+$N$ n'est pas diagonalisable. Il n'est donc pas utile de le calculer, mais pour information, 
+$E_2 =$ Vect$(\begin{pmatrix} 1 \\-1 \\2 \end{pmatrix} ) $.
+\end{enumerate}
+
+
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+\begin{enumerate}
+\item 
+$M= 
+\begin{pmatrix}
+1 & 2 & -1 \\
+2 & 7 & -8 \\
+-1 & -8 & 12
+\end{pmatrix}$
+
+\item 
+\begin{align*}
+q(x) &= x_1^2 +7x_2^2 +12x_3^2 +4x_1x_2 -2x_1x_3 -16x_2x_3 \\
+  &= (x_1+2x_2-x_3)^2 +3x_2^2 +11x_3^2 -12x_2x_3 \\
+    &= (x_1+2x_2-x_3)^2 +3(x_2-2x_3)^2 -x_3^2 \\
+    &= y_1^2 +3y_2 -y_3^2
+\end{align*}
+où 
+\[
+\begin{array}{cccc}
+y_1 = &  x_1 &+2x_2 &-x_3 \\
+y_2 =&   & x_2 & -2x_3 \\
+y_3= &  & & x_3
+\end{array}\]
+En posant 
+$Y = \begin{pmatrix} y_1 \\y_2\\y_3 \end{pmatrix}$ et 
+$X= \begin{pmatrix} x_1 \\ x_2 \\x_3
+\end{pmatrix}$, et 
+$Q = 
+\begin{pmatrix}
+1 & 2&-1\\0&1&-2\\0&0&1
+\end{pmatrix}$, cela donne 
+$Y=QX$.
+ En identifiant les coefficients, on obtient 
+ $Q^{-1} = \begin{pmatrix}
+ 1 & -2 & \alpha \\
+ 0 & 1 & 2 \\
+ 0&0&1
+ \end{pmatrix}$ 
+ où $\alpha$ doit vérifier 
+ $\alpha +4 -1 =0$ (on a identifié le coefficient en haut à droite, qui doit être $0$, 
+ dans le produit $Q.Q^{-1}$).
+ Donc $\alpha=-3$ et finalement 
+ $P=Q^{-1} = \begin{pmatrix}
+ 1&-2&-3\\
+ 0&1&2\\
+ 0&0&1
+ \end{pmatrix}$, avec 
+ $X=PY$.
+ $P$ est la matrice de passage de la base canonique à la base 
+ $\mathcal{B} = \{ 
+ \begin{pmatrix}
+ 1\\0\\0
+ \end{pmatrix} , 
+ \begin{pmatrix}
+ -2\\1\\0 
+ \end{pmatrix}
+ \begin{pmatrix}
+ -3\\2\\1
+ \end{pmatrix} \} = \{e_1,e_2,e_3\}$.\\
+D'après ce qui a été fait précédemment, $\mathcal{B}$ est alors une base orthogonale pour $q$, et
+ $Mat_{\mathcal{B}}(q) = \begin{pmatrix}
+ 1&0&0\\0&3&0\\0&0&-1
+ \end{pmatrix}$.
+ Rappelons, même si cela n'est pas utile ici, que cette matrice doit être égale 
+ à $^tPMP$ d'après la formule de changement de base pour les formes quadratiques.
+\item La signature de $q$ est donc $(2,1)$.
+\item Si $Y$ sont les coordonnées d'un vecteur $v\in \R^3$ dans la base $\mathcal{B}$, 
+on a donc $q(v)= y_1^2 +3y_2^2 -y_3^2$. 
+En prenant $Y=\begin{pmatrix}
+0\\0\\1
+\end{pmatrix}$, ou 
+$Y=\begin{pmatrix}
+0\\1\\2
+\end{pmatrix}$, on obtient donc des vecteurs 
+$x$ tels que $q(x)=-1$.\\
+L'exemple $Y=\begin{pmatrix}
+0\\0\\1
+\end{pmatrix}$ correspond au vecteur de $\R^3$, $x= 0.e_1 +0.é_2+1.e_3 = 
+\begin{pmatrix}
+-3\\2\\1
+\end{pmatrix}$ qui est bien un élément de $\Z^3$ 
+(la raison pour laquelle ça marche, c'est que les éléments de $\mathcal{B}$ sont dans $\Z^3$).
+On vérifie en effet que 
+$q(x) = (-3)^2 +7.(2)^2 +12 +4.(-3).2 -2.(-3).1 -16.2.1 
+= 9+28+12-24+6-32 =
+55-56=-1$. \\
+L'autre exemple $Y=\begin{pmatrix}
+0\\1\\2
+\end{pmatrix}$ correspond au vecteur 
+$x= e_2 +2e_3 = \begin{pmatrix}
+-8\\5\\2
+\end{pmatrix}$, qui est aussi bien dans $\Z^3$ et qui doit donc aussi vérifier 
+$q(x)=-1$.
+\end{enumerate}
+\medskip
+\noindent
+\textbf{Exercice 3:}\\
+Déjà, $M = Mat_{\mathcal{B}_{can}}(q) = 
+\begin{pmatrix}
+0 & \frac{1}{2} & -1\\
+\frac{1}{2} & 0 & 2\\
+-1 & 2 & 0
+\end{pmatrix}$. Ensuite, comme dans $q$ il n'y a pas de termes carrés, on en fait apparaître en faisant 
+le changement de variable
+\[\begin{array}{ccccc}
+x_1&=&y_1&+y_2& \\ 
+x_2 & =&y_1&-y_2&\\
+x_3 &=& & &y_3
+\end{array}\]
+qui équivaut à 
+\[\begin{array}{cc}
+y_1& = \frac{x_1+x_2}{2} \\
+y_2&= \frac{x_1-x_2}{2} \\
+y_3&= x_3
+\end{array}\]
+On obtient alors 
+\begin{align*}
+q(x) &= (y_1+y_2)(y_1-y_2) -2(y_1+y_2)y_3 +4(y_1-y_2)y_3 \\
+     &= y_1^2 -y_2^2 +2y_1y_3 -6y_1y_3 \\
+     &=(y_1+y_3)^2-y_2^2 -y_3^2 -6y_2y_3\\
+     &= (y_1+y_3)^2 -(y_2+3y_3)^2 +8y_3^2\\
+     &= z_1^2-z_2^2 +8z_3^2 
+\end{align*}
+où 
+\[\begin{array}{ccccc}
+z_1 &=& y_1+y_3  &=& \frac{x_1+x_2}{2}+x_3\\
+z_2 &=& y_2+3y_3 &=& \frac{x_1-x_2}{2}+3x_3\\
+z_3 &=&y_3        & =&   x_3
+\end{array} \]
+Soit 
+$Z=QX$ où 
+\[Q= \begin{pmatrix}
+\frac{1}{2} & \frac{1}{2} & 1\\
+\frac{1}{2} & -\frac{1}{2} & 3 \\
+0&0&1
+\end{pmatrix}\]
+On peut directement caluler 
+$P =Q^{-1}$ avec le pivot de Gauss
+et on trouve $P= \begin{pmatrix}
+1 & 1 & -4 \\
+1 & -1 &2\\
+0&0&1
+\end{pmatrix}$ , qui est donc la matrice qui vérifie $X=PZ$. \\
+On peut aussi faire nos changements de variable \emph{à l'envers}, et exrpimer $X$ en fonction de $Z$.
+On montre d'abord facilement que 
+\[ \begin{array}{ccc}
+y_1 &=& z_1-z_3 \\
+y_2 &=&z_2 -3z_3 \\
+y_3 &=& z_3
+\end{array}\] 
+puis comme on avait déjà calculé $X$ en fonction de $Y$ on obtient finalement :
+\[ \begin{array}{ccccc}
+x_1 &=& y_1+y_2 & = &z_1+z_2-4z_3 \\
+x_2 &=& y_1 -y_2 &= &z_1 -z_2 +2z_3 \\
+x_3 &=&y_3 &=&z_3
+\end{array}
+\]
+soit $X = \begin{pmatrix}
+1 & 1 & -4 \\
+1 & -1 &2\\
+0&0&1
+\end{pmatrix} Z$ qui nous redonne (heureusement) la même valeur de $P$. 
+Ainsi 
+$^tPMP = \begin{pmatrix}
+1&0&0\\0&-1&0\\ 0&0&8
+\end{pmatrix}$.
+
+\bigskip
+\noindent
+\textbf{Exercice 4:}\\
+
+\begin{enumerate}
+\item 
+En effet 
+si $\varphi(P,Q) = \frac{P(1)Q(-1) + P(-1)Q(1)}{2}$, alors 
+$q(P)= \varphi(P,P)$, et on peut en effet vérifier que  $\varphi$ 
+est bien une forme bilinéaire symétrique sur 
+$\R_2[X]$.
+\item La matrice cherchée est 
+$\begin{pmatrix}
+1&0&1 \\
+0&-1&0\\
+1 & 0 & 1
+\end{pmatrix}$.
+On peut le voir en utilisant l'expression de $\varphi$ obtenue à la question précédente, ou 
+directement en utilisant la définition de q : 
+$q(x_11 + x_2X +x_3X^2) =
+(x_1+x_2+x_3)(x_1-x_2+x_3) = x_1^2 -x_2^2 +x_3^2 +2x_1x_3$.
+\item Donc dans la base canonique de 
+$\R_2[X]$, $q(x) = x_1^2 -x_2^2 +x_3^2 +2x_1x_3$.\\
+A partir de là, on diagonalise cette forme quadratique, et le calcul est très simple :
+\begin{align*}
+q(x) &=  x_1^2 -x_2^2 +x_3^2 +2x_1x_3 \\
+&=  (x_1+x_3)^2 -x_2^2
+\end{align*}
+Et là c'est fini, mais il faut bien faire attention que la forme quadratique est dégénérée.
+On pose le changement de variable suivant :
+\[ \begin{array}{cc}
+y_1 &=x_1+x_3 \\
+y_2 &= x_2 \\
+y_3 &=x_3
+\end{array}\]
+C'est bien un changement de variables, qui s'écrit 
+$Y = QX$ avec 
+$Q=\begin{pmatrix}
+1 &0&1\\ 0&1&0\\0&0&1
+\end{pmatrix}$ qui est bien une matrice inversible. Ainsi dans la base 
+$\mathcal{B}$ qui correspond à $Q^{-1}$ (qu'on n'a pas besoin de calculer)
+la matrice de $q$ est diagonale :
+$\begin{pmatrix}
+1 &0&0\\0&-1&0\\0&0&0
+\end{pmatrix}$
+et la signature de $q$ est donc 
+$(1,1)$.
+\item Comme $(X-1)+(X+1)=2$,  Vect$(\mathcal{B}) \supset \{1,X-1,X^2-1\}$, on en déduit que 
+$\mathcal{B}$ est génératrice, donc une base puisqu'elle contient autant d'éléments que la dimension de
+$\R^2[X]$.
+\item Notons $a,b,c$ les coordonnées dans $\mathcal{B}$.
+Alors 
+$ q(a(X-1)+b(X+1)+c(X^2-1) ) = (2b)(-2a)=-4ab$.
+Ainsi 
+la matrice de $q$ dans $\mathcal{B}$ est 
+$\begin{pmatrix}
+0&-2&0\\-2&0&0\\0&0&0
+\end{pmatrix}$.
+
+\end{enumerate}    
+
+
+\bigskip
+\noindent
+\textbf{Exercice 5:}\\
+Déjà, $\dim(F)=2=3-1$ (c'est le noyau d'une forme linéaire si on veut employer des mots compliqués).
+On en choisit une base, par exemple 
+$\mathcal{B} = \{ (1,-1,0) , (1,0,-1) \}= \{e_1,e_2\}$. 
+Alors 
+\[q_{|F}(x_1e_1 + x_2e_2) =  q( \ (x_1+x_2, -x_1,-x_2) \ ) =
+(x_1+x_2)^2 +3(-x_1)^2-8(-x_2)^2 =
+4x_1^2 -7x_2^2 +2x_1x_2. \]  
+Ainsi Mat$_{\mathcal{B}}(q_{|F})=M = \begin{pmatrix} 4&1\\1&-7
+\end{pmatrix}$. \\
+On sait que dans une certaine base (pour laquelle on note $P$ la matrice de changement de 
+base) la matrice de $q$ est diagonale, de la forme 
+$^tPMP = \begin{pmatrix}
+a&0\\0&b
+\end{pmatrix}$.
+Alors $ab = \det(^tPMP) = \det(P)^2\det(M) <0$ car $\det(M)=-29$ et 
+$\det(P)^2 >0$.
+Ainsi, $ab<0$ et cela signifie que quitte à échanger $a$ et $b$ on aura $a<0$ et $b>0$, donc 
+la signature de 
+$q_{|F}$ est $(1,1)$.  Bien, sûr, on aurait aussi pu chercher à diagonaliser 
+$q_{|F}$.
+
+
+
+
+\bigskip
+\noindent
+\textbf{Exercice 6:}\\
+\begin{enumerate}
+\item 
+La signature $(s,t)$ doit vérifier $s+t \leq 3$ avec égalité si la forme est non 
+dégénérée. \\
+Déjà, si la forme est dégénérée, alors par définition, on peut trouver 
+$x\in N(q) \setminus \{0\}$, et alors $q(x) =0$. \\
+Si $q$ est non-dégénérée, si sa signature est $(2,1)$, alors quitte à faire un changement de base, on peut supposer que 
+$q(x,y,z) =x^2+y^2 -z^2$, et alors $q(1,0,1)=0$, avec $(1,0,1)\in \R^3 \setminus \{0\}$. De même, 
+si $q$ est de signature $(1,2)$, on peut trouver $x\ne 0$ tel que $q(x)=0$.\\ 
+Finalement, si $q$ est de signature $(3,0)$, alors $q$ est un produit scalaire car elle est définie positive : en effet, quitte à faire un changement de base, on peut supposer que 
+$q(x,y,z)= x^2+y^2+z^2$, et donc si $v\ne 0$, $q(v) >0$.
+De même, si $q$ est de signature $(0,3)$, $q$ est définie négaitve, i.e. 
+$\forall v \ne 0$, $q(v)<0$. \\
+Ainsi il existe $x\ne 0 $ tel que 
+$q(x)=0$ si et seulement si la signature de $q$ est différente de $(3,0)$ et $(0,3)$.
+\item D'après un théorème du cours, 
+il existe des complexes $a_1,\ldots , a_n$ et une base de $\C^n$ tels que 
+$q$ s'écrive 
+$q(x)= a_1x_1^2+  \ldots +a_n x_n^2$.
+Si $a_1 \neq 0$, alors il existe 
+$\alpha \in \C$ tel que 
+$a_1 \alpha^2 +a_2=0$ (ici on utilise d'une certaine manière le théorème de D'Alembert-Gauss, qui dit 
+que tout polynôme complexe admet une racine copmplexe).
+Alors $q(\alpha,1,0, \ldots, 0) =a_1 \alpha^2 +a_2=0$. 
+\end{enumerate}
+\end{document}
+
+

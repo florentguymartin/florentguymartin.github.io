@@ -1,0 +1,187 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+\title{Fiche 1\\Espaces Vectoriels, Applications linéaires}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Interro n$^o$ 1}
+\end{center}
+\normalsize
+
+\medskip
+\noindent
+\textbf{Exercice 1:}\\
+On consid\`ere l'espace vectoriel $\R_2[X]$ des  polyn\^omes r\'eels de degr\'e inf\'erieur ou
+\'egal \`a 2. 
+On note $\BC=\{1,X,X^2\}$ la base canonique de $\R_2[X]$. 
+On admet que la famille $\BC'=\{ X, X+1, X(X+1)\}$ est aussi une base de  $\R_2[X]$.
+
+Tout \'el\'ement $\Pi(X)$ de  $\R_2[X]$ peut s'\'ecrire sous les formes suivantes:
+$$
+\Pi(X)=A+BX+CX^2=aX+b(X+1)+cX(X+1).
+$$
+\begin{enumerate}
+\item Exprimer $A,B,C$ en fonction de $a,b,c$. 
+
+\item Exprimer $a,b,c$ en fonction de $A,B,C$.
+\item \'Ecrire les expressions pr\'ec\'edentes sous forme matricielle. C'est \`a dire, donner les matrices $P$ et $Q$ telles que 
+$$
+\left(\begin{array}{c}A\\B\\C\end{array}\right)=P\left(\begin{array}{c}a\\b\\c\end{array}\right)
+\quad 
+\text{ et }
+\left(\begin{array}{c}a\\b\\c\end{array}\right)=Q\left(\begin{array}{c}A\\B\\C\end{array}\right)
+$$
+
+\item Quelle est la matrice de passage de $\BC$ \`a $\BC'$?\\
+
+\indent
+On consid\`ere l'endomorphisme de d\'erivation $D$ de $\R_2[X]$ d\'efini par $D : \Pi(X) \mapsto \Pi'(X)$.
+On note $M$ la matrice de $D$ dans $\BC$, c'est \`a dire $M=\Mat_{\BC,\BC}(D)$ et
+ $M'$ la matrice de $D$ dans $\BC'$, c'est \`a dire $M'=\Mat_{\BC',\BC'}(D)$. \\
+
+\item \'Ecrire $M$.
+
+\item Donner une relation entre $M$, $M'$, $P$ et $Q$.
+
+%\item Utiliser la relation ci-dessus pour calculer $M'$.
+\end{enumerate}
+
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+On consid\`ere le sous-ensemble de matrices r\'eelles $2\times 2$ suivant:
+$$
+\F=\left\{\begin{pmatrix} a&b\\ 
+-b&a \end{pmatrix},\; a,b\in \R\right\}.
+$$
+\begin{enumerate}
+\item Montrer que $\F$ est un sous-espace vectoriel de $M_2(\R)$. Quelle est la dimension de $\F$?\\
+
+On  consid\`ere $\C$ comme un espace vectoriel r\'eel, et on d\'efinit une application $f:\F\rightarrow \C$ par
+$$
+f:\begin{pmatrix} a&b\\ 
+-b&a \end{pmatrix}
+\mapsto
+a+ib
+$$
+\item Montrer que $f$ est lin\'eaire.
+\item Montrer que $f$ est bijective.
+\item Montrer que pour toutes $M,N\in \F$ le produit $MN$ est dans $\F$.
+\item Montrer que $f(MN) =f(M)f(N)$ pour toutes $M,N\in \F$.
+\end{enumerate}
+
+\newpage 
+\medskip
+\noindent
+\textbf{Exercice 3:}\\
+Calculer le d\'eterminant de la matrice suivante. 
+$$
+M= \left(
+\begin{array}{ccc}
+0&1&2\\[5pt]
+1&1&2\\[5pt]
+0&2&3
+\end{array}
+\right)
+$$
+En d\'eduire que $M$ est inversible et calculer son inverse.\\
+
+
+
+
+\medskip
+\noindent
+\textbf{Exercice 4, \`a faire en dernier:}\\
+Soient $E$ un espace vectoriel r\'eel de dimension $4$ de base $\BC$, 
+et $F$ un espace vectoriel r\'eel de dimension~$3$ de base $\CC$.
+
+On consid\`ere l'application lin\'eaire $\varphi:E\rightarrow F$ dont la matrice 
+$A=\Mat_{\BC,\CC}(\varphi)$ est donn\'ee par:
+$$
+A=\begin{pmatrix} 1 & -2 &-1 &2 \\ 
+1&-5&-1&5\\
+-2&1&2&-1 \end{pmatrix}
+$$
+
+\begin{enumerate}
+\item Calculer le rang de $A$.
+\item On suppose ici que $E=\R^4$, $F=\R^3$ et que les bases $\BC$ et $\CC$ sont les bases canoniques.
+\begin{enumerate}
+\item Que vaut $\varphi\big((x,y,z,t)\big)$?
+\item Montrer que $\ker(\varphi) =\Vect\{ (1,0,1,0),(0,1,0,1)\}$.
+\end{enumerate}
+\item On suppose ici que $E=\R_3[X]$, $F=\R_2[X]$ et que les bases $\BC$ et $\CC$ sont les bases canoniques,
+c'est \`a dire $\BC=\{1,X,X^2,X^3\}$ et $\CC=\{1,X,X^2\}$.
+\begin{enumerate}
+\item Que vaut $\varphi(X^2-X)$?
+\item Donner une base de $\ker(\varphi)$.
+\end{enumerate}
+\item La matrice $A$ peut-elle repr\'esenter une application lin\'eaire entre deux espaces de matrices?
+\end{enumerate}
+
+
+
+\end{document}
+
+

@@ -1,0 +1,157 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+
+
+
+\newtheorem{Theoreme}{Th{\'e}or{\`e}me}[section]
+\newtheorem{Definition}{D{\'e}finition}[section]
+\newtheorem{Prop}{Proposition}[section]
+\newtheorem{Lemme}{Lemme}[section]
+\title{DM  LM 121 }
+\date{}
+\begin{document}
+
+
+\maketitle
+\noindent \emph{Encadrez bien vos résultats.}\\
+A rendre le 8 Novembre.
+
+\begin{enumerate}
+ 
+
+\item
+Pour quelle(s) valeur(s) de $x\in \mathbb{R}$ les vecteurs
+$u=\begin{pmatrix}
+  1 \\ x \\ 1
+ \end{pmatrix}$
+, 
+$v = \begin{pmatrix}
+      1 \\ 2 \\ 3
+     \end{pmatrix}
+$
+et 
+$w= \begin{pmatrix}
+     x\\
+1\\
+-1 
+    \end{pmatrix}$
+sont-ils libres?
+
+\item
+
+Soit 
+$\mathcal{P}$ le plan passant par 
+$A =(1,2,-1)$ et engendré par les vecteurs 
+$u = \begin{pmatrix}
+      1 \\1 \\ -1
+     \end{pmatrix} $
+ et $v= \begin{pmatrix}
+         2 \\ -3 \\ -1
+        \end{pmatrix}$.
+Soit $\mathcal{D}$ la droite passant par 
+$B=(1,1,1)$ et de vecteur directeur $w=\begin{pmatrix}
+                                        1 \\ 2 \\ 1
+                                       \end{pmatrix}$.
+Déterminer $\mathcal{P} \cap \mathcal{D}$.
+ 
+
+\item
+Trouver $u,v$ et $w$ tels que
+$\begin{pmatrix}
+1 & -1 & 1 \\
+2 & 1 & 3 \\
+1 & -1 & 2\end{pmatrix}
+\begin{pmatrix} u & 3 & 0 \\
+v & -1 & -1 \\
+w & 1 & 2 \end{pmatrix}
+=
+\begin{pmatrix} 
+-3 & 5 & 3 \\
+-2 & 8 & 5 \\
+-5 & 6 & 5 \end{pmatrix}
+$
+
+
+
+
+\item
+Résoudre le système
+$$\begin{array}{cccl}
+ x&+2y&+z&=0\\
+2x&-y&+z&=4\\
+3x&+y&+2z&=4\\
+5x&&+3z&=8
+\end{array}$$
+
+\item
+
+\begin{enumerate}
+\item
+Soit 
+$M = \begin{pmatrix}
+      3 & -30 \\
+      0 & 2    
+     \end{pmatrix}$.
+Pour $n\in \mathbb{N}^*$ , on note 
+$M^n = M.M \ldots M$ (n fois). \\
+Trouver une formule simple pour $M^n$. \\
+(indication : $ \displaystyle 3^n + 2.3^{n-1} + 2^2.3^{n-2} + \ldots + 2^{n-1}.3 + 2^n
+= \sum_{i=0}^n 3^{n-i}2^i = 3^n( \sum _{i=0}^n(\frac{2}{3})^i )$ et reconnaître alors une 
+série géométrique).
+
+\item
+On considère une population de poules et de renards.
+Au temps $n\in \mathbb{N}$ on a $p_n$ poules et $r_n$ renards. Leur 
+population évolue ainsi :\\
+(1) Au temps $n+1$ on a trois fois plus de poules qu'au temps $n$ , 
+mais entre temps chaque renard a mangé $30$ poules.\\
+(2) Au temps $n+1$ on a deux fois plus de renards qu'au temps $n$. \\
+Cela se traduit par les relations : \\
+(1) $p_{n+1} = 3p_n -30r_n$ \\
+(2) $r_{n+1} = 2r_n$\\
+Initialement il y a 59 poules et 2 renards ($p_0 = 59$ et $r_0=2$).\\
+Question : existe-t-il un moment où les renards auront mangé toutes les poules? 
+(dit autrement, existe-t-il un $n\in \mathbb{N}$ tel que $p_n \leq 0$ ). \\
+indication : considérer la multiplication matricielle 
+$M. \begin{pmatrix} p_n \\ r_n \end{pmatrix}$ et la question précédente.\\
+Pour info :
+
+\begin{tabular}{l|c|c}
+ n=  &  $p_n$ & $r_n$ \\
+\hline
+0 &  59 & 2 \\
+1 & 117&4 \\
+2 & 231 & 8 \\
+3 & 453 & 16 \\ 
+4 & 879 & 32
+\end{tabular}
+
+
+
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

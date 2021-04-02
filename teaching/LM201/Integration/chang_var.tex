@@ -1,0 +1,112 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+
+\newtheorem{theo}{Th{\'e}or{\`e}me}[section] 
+
+
+\begin{document}
+\date{}
+\title{}
+\maketitle
+
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{bibli}
+
+\begin{theo} Soit $a$ et $b \ \in \mathbb{R}$, et $f$ une fonction $\mathcal{C}^0$ sur un intervalle $I$, et $\phi : [a,b] \rightarrow I$ une fonction $\mathcal{C}^1$, alors 
+$$\int_{\phi(a)}^{\phi(b)}f(x)dx = \int_a^b f(\phi (x))\phi '(x) dx$$
+\end{theo}
+
+ \begin{proof}
+On consid{\`e}re $F$ une primitive de $f$. Alors le membre de gauche est 
+$$[F(x)]^{\phi(b)}_{\phi (a)} = [F\circ \phi(x)]^b_a .$$
+Et comme $F\circ \phi ' = \phi ' . f\circ \phi$ le membre de droite est aussi $[F\circ \phi]^b_a$.
+\end{proof}
+En pratique on {\'e}crira : \\
+on fait le changement de variable $x=\phi (t)$ qui donne $dx = \phi '(t) dt$. \par
+L'id{\'e}e est donc juste d'utiliser la formule de d{\'e}rivation pour la compos{\'e}e. Voici des exemples :
+
+\subsection
+\textbf{dans les exemples qui suivent, on va partir d'une int{\'e}grale de la forme $\int \phi ' f(\phi)$ et passer {\`a} l'integrale $\int f$. Qui correspond au passage de la droite vers la gauche dans le th{\'e}or{\`e}me}
+
+
+\begin{enumerate}
+
+\item  
+$$\int_a^b 2tsin(t^2)dt = \int_{a^2}^{b^2} sin(x)dx$$
+On a fait  $x=t^2$ qui a donn{\'e} $dx=2tdt$.
+\vspace{4mm}
+ \item 
+$$\int_a^b t^3ln(1+t^4)dt = \frac{1}{4}\int_a^b4t^3ln(1+t^4)dt
+= \frac{1}{4} \int_{a^4}^{b^4}ln(1+x)dx$$
+On a fait $x = t^4$ qui donne $dx=4t^3dt$. 
+\vspace{4mm}
+\item 
+pour $X>0$ on a \\
+$\int_1^X\frac{ln(t)}{t}dt = \int_0^{ln(X)}xdx$ \\
+L{\`a} on a fait $x=ln(t)$ qui donne $dx = \frac{1}{t}dt$.
+
+\end{enumerate}
+
+\subsection
+ \textbf{Et maintenant des exemples o{\`u} on part d'une integrale $\int f(x)$ , et qu'on transforme en la forme $\int \phi '(x). f( \phi(x))$ qu'on saura calculer (c'est le cas le plus utilis{\'e}).}
+
+\begin{enumerate}
+
+\item
+$\int_0^1 \sqrt{1-x^2}dx = \int_0^{\frac{\pi}{2}}\sqrt{1-sin^2(t)}cos(t) dt 
+= \int_0^{\frac{\pi}{2}}cos(t)cos(t)dt$\\
+Et celle l{\`a} on sait la cacluler. L{\`a} on a fait le changement de variable $x=sin(t)$ qui a donn{\'e} $dx = cos(t)dt$.
+ \vspace{4mm}
+
+\item 
+Dor{\'e}navant, au lieu d'{\'e}crir $\int_a^b$ j'{\'e}crirai uniquement $\int^X$, qui me donnera donc une fonction de $X$, qui sera justement la primitive que l'on cherche.\\
+
+On veut calculer $I=\int^X\sqrt{e^x-1}dx$. \\
+On fait $x=ln(t)$ soit $t=e^x$, qui donne $dx = \frac{1}{t}dt$ d'o{\`u} $\int^{e^X}\frac{\sqrt{t-1}}{t}dt$ \\
+l{\`a} on fait le changement de variable $u=t-1$ qui donne $du=dt$ d'o{\`u} 
+\\$I=\int^{e^X-1}\frac{\sqrt{u}}{u+1}$ . \\
+Puis on fait $u=w^2$ qui donne $du = 2wdw$ d'o{\`u} 
+$$I = \int^{\sqrt{e^X-1}}\frac{2w^2}{w^2+1} = \int^{\sqrt{e^X-1}}1-\frac{1}{w^2+1}dw 
+= 2\sqrt{e^X-1} - 2Arctan(\sqrt{e^X-1})$$
+Pour ceux qui seraient dubitatifs, d{\'e}rivez, et vous verrez que c'est bien une primitive de $\sqrt{e^X-1}$.
+
+\end{enumerate}
+
+
+
+\subsection{Des exemples, avec indication}
+
+\begin{enumerate}
+\item
+$$\int_0^X \frac{x^2lnx}{(x^3+1)^2}dx$$
+ind : en remarquant que $ln(x) = \frac{1}{3}ln(x^3)$ faire le changement de variable $u=x^3$, puis ensuite une integration par parties.
+
+\item
+$$\int^Xsin(ln(x))dx$$
+ind : faire $x=e^u$.
+
+\item
+$$\int^X \frac{\sqrt{t+2}}{t+1}dt$$
+ind : faire $t+2=u$, puis $u=v^2$.
+
+\item 
+$$\int^X cos^4(x)sin^5(x)dx$$
+Faire $u=cos(x)$
+
+\end{enumerate}
+
+
+
+
+
+\end{document}

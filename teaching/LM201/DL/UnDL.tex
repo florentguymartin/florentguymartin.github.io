@@ -1,0 +1,48 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+
+
+
+
+\newtheorem{Theoreme}{Th{\'e}or{\`e}me}[section]
+\newtheorem{Definition}{D{\'e}finition}[section]
+\newtheorem{Prop}{Proposition}[section]
+\newtheorem{Lemme}{Lemme}[section]
+
+\begin{document}
+
+\title{Un DL}
+\maketitle
+\renewcommand{\labelitemi}{$\circ$}
+
+
+
+Au voisinage de $0$ on a :
+$$\frac{ \cos(x) }{1+x+x^3} = \frac{1-\frac{x^2}{2} + \frac{x^4}{24} +
+  \circ(x^4)}{1+x+x^3} $$ \\
+$=(1-\frac{x^2}{2}+\frac{x^4}{24} +\circ(x^4) \
+)(1-(x+x^3)+(x+x^3)^2-(x+x^3)^3+(x+x^3)^4 +\circ (x^4) \ ) $ \\
+ $= ( 1 - \frac{x^{2}}{2} + \frac{x}{24} )(1-x-x^3+x^2+2x^4-x^3+x^4 +
+\circ (x^4)
+\ )$
+\\
+$=(1-\frac{x^2}{2}+\frac{x^4}{24})(1-x+x^2-2x^3+3x^4 +\circ (x^4) \ )$\\
+$=1-x+x^2-2x^3+3x^4-\frac{x^2}{2} + \frac{x^3}{2} - \frac{x^4}{2} +
+\frac{x^4}{24} + \circ(x^4)$\\
+$=1-x+\frac{x^2}{2} -\frac{3x^3}{2} + \frac{61x^4}{24} + \circ(x^4)$\\
+
+
+
+\bibliographystyle{alpha}
+\bibliography{bibli}
+
+
+
+
+
+\end{document}

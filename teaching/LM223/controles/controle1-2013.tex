@@ -1,0 +1,180 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+\title{Fiche 1\\Espaces Vectoriels, Applications linŽaires}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Interro n$^o$ 1}
+\end{center}
+\normalsize
+
+\medskip
+\noindent
+\textbf{Exercice 1:}\\
+Calculer le d\'eterminant de la matrice suivante. 
+$$
+M= \left(
+\begin{array}{ccc}
+0&1&2\\[5pt]
+1&1&2\\[5pt]
+0&2&3
+\end{array}
+\right)
+$$
+En d\'eduire que $M$ est inversible et calculer son inverse.\\
+
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+On consid\`ere le sous-ensemble de matrices r\'eelles $2\times 2$ suivant:
+$$
+\F=\left\{\begin{pmatrix} a&b\\ 
+-b&a \end{pmatrix},\; a,b\in \R\right\}.
+$$
+\begin{enumerate}
+\item Montrer que $\F$ est un sous-espace vectoriel de $M_2(\R)$. Quelle est la dimension de $\F$?\\
+
+On  consid\`ere $\C$ comme un espace vectoriel r\'eel, et on d\'efinit une application $f:\F\rightarrow \C$ par
+$$
+f:\begin{pmatrix} a&b\\ 
+-b&a \end{pmatrix}
+\mapsto
+a+ib
+$$
+\item Montrer que $f$ est lin\'eaire.
+\item Montrer que $f$ est bijective.
+\item Montrer que pour toutes $M,N \in \F$, le produit $MN $ est dans $\F$. 
+\item Montrer que $f(MN) =f(M)f(N)$ pour toutes $M,N\in \F$.
+\end{enumerate}
+
+
+\medskip
+\noindent
+\textbf{Exercice 3:}\\
+%On consid\`ere l'endomorphisme dont la matrice dans la base canonique est
+Soit $\displaystyle M = \begin{pmatrix}-1&1&1\\ 1&-1&1\\ 1&1&-1\end{pmatrix} . $
+\begin{enumerate}
+\item Calculer le polyn\^ome caract\'eristique $P_M(X)$.
+\item Quelles sont les valeurs propres de $M$? Donner des bases des sous-espaces propres associ\'es.
+\item $M$ est-elle diagonalisable? Si oui, donner une matrice $P$ telle que $P^{-1}MP$ soit diagonale.
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 4:}\\
+Soit $F= \{ (x,y,z,t) \in \C^4 \ \big| \ x+y+z+t=0 \}$.
+\begin{enumerate}
+\item 
+Montrer que $F$ est un sous-espace vectoriel de $\C^4$ et donner, en le justifiant, 
+sa dimension. 
+\item 
+Soit $e_1 = (1,0,0,-1)$, $e_2=(0,1,0,-1)$, $e_3=(0,0,1,-1)$ et  
+$\mathcal{B} = \{e_1,e_2,e_3\}$. Montrer que $\mathcal{B}$ est une base de $F$.
+\item 
+Soit 
+\[ \begin{array}{rrcl}
+\varphi :& F & \rightarrow & F \\
+         & (x,y,z,t) & \mapsto & (x+3y+t, 3x-2y , -2x+2y+z, -y+z+t) 
+ \end{array} \]
+Montrer que $\varphi$ est bien une application de $F$ dans $F$, et qu'elle est linéaire.
+Puis calculer $M=$Mat$_{\mathcal{B}}(\varphi)$.
+\item Est-ce que $\varphi $ est diagonalisable? Si oui donner une base de vecteurs propres de $\varphi$.
+ 
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 5:}\\
+
+Soit $A \in M_3(\C)$ une matrice diagonalisable.
+$\mathcal{C}_A= \{M \in M_3(\mathbb{C}) \ \big| \ 
+MA=AM \}$
+\begin{enumerate}
+\item 
+Montrer que $\mathcal{C}_A$ est un sous-espace vectoriel de $M_3(\mathbb{C})$. 
+\item 
+Soit $\lambda$ une valeur propre de $A$, $E_{\lambda}$ l'espace propre associé.
+Si $u \in E_{\lambda}$, montrer que $Mu \in E_{\lambda}$.
+\item 
+En déduire la dimension de $\mathcal{C}_A$.\\
+\emph{Attention, la dimension de $\mathcal{C}_A$ dépend de la dimension des espaces propres de $A$, 
+et n'est pas la même pour toutes les matrices diagonalisables. Dans votre réponse il faut donc distinguer plusieurs cas.}
+\item
+Soit $D = \begin{pmatrix}
+a &0 &0 \\ 0 & b & 0 \\ 0 & 0 &c
+\end{pmatrix} \in M_3(\mathbb{C})$, avec $a,b,c$ trois nombres complexes distincts.\\
+Soit $\mathcal{C}_D= \{M \in M_3(\mathbb{C}) \ \big| \ 
+MD=DM \}$. 
+Donner une base de $\mathcal{C}_D$.
+
+\end{enumerate}
+
+
+
+
+
+\end{document}
+
+

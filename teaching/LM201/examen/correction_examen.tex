@@ -1,0 +1,123 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+
+\title{Correction de l'examen}
+\maketitle
+
+
+
+\subsection*{Exercice 1}
+On commence par lin{\'e}ariser $(cos(x))^4$. Pour cela on passe en {\'e}criture complexe :\\
+$$(\cos(x))^4 = (\frac{e^{ix} +e^{-ix}}{2})^4=
+\frac{(e^{ix})^4+4(e^{ix})^3e^{-ix} + 6(e^{ix})^2(e^{-ix})^2+4e^{ix}(e^{-ix})^3 + (e^{-ix})^4}{2^4}$$ \\
+$$=\frac{e^{i4x}+4e^{i2x} + 6 + 4e^{-i2x} + e^{-i4x}}{16}$$\\
+$$ =\frac{3}{8} + \frac{1}{8} \frac{(e^{i4x} + e^{-i4x}) + 4(e^{i2x}+e^{-i2x})}{2}$$\\
+$$=\frac{3}{8} + \frac{\cos(4x)}{8} + \frac{ \cos(2x)}{2}$$\\
+$$ \text{Ainsi} \int_0^{\frac{\pi}{2}}\cos^4(x)dx=
+ \frac{3\pi}{16} + \int_0^{\frac{\pi}{2}} \frac{\cos(4x)}{8} + \frac{ \cos(2x)}{2} dx $$\\
+$$ =\frac{3\pi}{16 } + [ \frac{\sin(4x)}{32} + \frac{\sin(2x)}{4}
+]_0^{\frac{\pi}{2}}= \frac{3\pi}{16} $$
+
+\subsection*{Exercice 2}
+Il faut tout d'abord trouver une racine du d{\'e}nominateur. On remarque que $-1$ en est une.
+ On en d{\'e}duit alors la factorisation : $x^3+x^2+x+1 = (x+1)(x^2+1)$. 
+La d{\'e}composition en {\'e}l{\'e}ment simple sur $\mathbb{R}$ de la fraction
+ rationelle $\frac{X^2+3X}{(X+1)(X^2+1)}$ sera de la forme $\frac{a}{X+1} + \frac{bX+c}{X^2+1}$, 
+ car le degr{\'e} du num{\'e}rateur est strictement plus petit que celui du d{\'e}nominateur (dans le cas contraire il y aurait eu un polynome en plus qu'on aurait pu 
+ obtenir en faisant le quotient du num{\'e}rateur par le d{\'e}nominateur).\\
+ Pour identifier le coefficient $a$ , on multiplie des deux c{\^o}t{\'e}s par $(X+1)$ et on {\'e}value en $-1$. 
+ Cela donne $a= \frac{-2}{2} = -1$.\\
+ Cela nous donne donc $\frac{X^2+3X}{(X+1)(X^2+1)} = \frac{-1}{X+1} + \frac{bX+c}{X^2+1} $. On passe le terme $\frac{-1}{X+1}$
+ {\`a} gauche, ce qui donne 
+ \begin{equation}\frac{X^2+3X+X^2+1}{(X+1)(X^2+1)} = \frac{2X^2+3X+1}{(X+1)(X^2+1)}= \frac{bX+c}{X^2+1} \label{eq1}\end{equation}
+ A ce stade on peut utiliser plusieurs m{\'e}thodes
+ \begin{itemize}
+ \item {\'e}valuer en $x=0$ qui nous donne $\frac{1}{1} = \frac{c}{1}$ , i.e. $c=1$. 
+ Et pour trouver $b$ on peut {\'e}vlauer en $x=1$ qui donne 
+ $\frac{6}{4}=\frac{b+1}{2}$ soit $b=2$.
+ \item on peut aussi remarquer que l'{\'e}galit{\'e} des deux fractions rationnelles dans \eqref{eq1} implique que le num{\'e}rateur de gauche est forc{\'e}ment divisible par 
+ $X+1$ et on a $2X^2+3X+1 =(X+1)(2X+1)$ et donc $\frac{2X^2+3X+1}{(X+1)(X^2+1)}=\frac{(X+1)(2X+1)}{(X+1)(X^2+1)} = \frac{2X+1}{X^2+1}$.
+ Donc en identifiant $b=2$ et $c=1$.
+ \item ou encore on multiplie par $X+1$ des deux c{\^o}t{\'e}s ce qui donne $2X^2+3X+1 = (X+1)(bX+c)=bX^2+(b+c)X+c$ donc encore par identification $b=2$ et $c=1$.
+ \end{itemize}
+ Finalement $\frac{X^2+3X}{X^3+X^2+X+1} = \frac{-1}{X+1} + \frac{2X+1}{X^2+1}$ et donc \\
+ $I=\int_0^1 \frac{x^2+3x}{x^3+x^2+x+1} dx = 
+ -\int_0^1 \frac{1}{x+1} dx + \int_0^1\frac{2x}{x^2+1} +\frac{1}{x^2+1} dx$
+ Or une primitive de $\frac{2x}{x^2+1}$ est $\ln(x^2+1)$ et on en d{\'e}duit \\
+ $I= [-\ln(x+1) + \ln(x^2+1) + \arctan(x) ]^1_0 =-\ln(2)+\ln(2) +\arctan(1) - \arctan(0) = \arctan(1) = \frac{\pi}{4}$.
+
+ 
+ \subsection*{Exercice 3}
+ \textbf{a)} Non c'est faux et c'est une {\'e}norme faute que de le croire. Par exemple la suite $u_n = n +(-1)^n$ tend vers $+$ l'infini. 
+ Mais elle n'est croissante {\`a} partir d'aucun rang. En effet pour tout $n $ dans $\mathbb{N}$ on a $u_{2n}=2n+1>2n = u_{2n+1}$. \par
+ \textbf{b)} Non plus. Par exemple on peut prendre la fontion $f(x) = \cos(2\pi x)$. On v{\'e}rifie que pour tout $x$ r{\'e}el $f(x+1)=f(x)$ car $\cos$ est
+ $2\pi$-p{\'e}riodique. Donc $f(x+1)-f(x)=0$ pour tout $x$ donc $\lim_{ x \to + \infty}(f(x+1)-f(x))$ existe et vaut $0$. Mais $f$ n'a pas de limite en $\ + \infty$.
+ 
+ 
+ \subsection*{Exercice 4}
+ \textbf{a)}
+ On r{\'e}sout d'abord le polynome associ{\'e} {\`a} l'{\'e}quation homog{\`e}ne : $r^2-3r+2=0$ qui done $r=1$ ou $r=2$. Ainsi les solutions de l'{\'e}quation homog{\`e}ne sont de la forme 
+ $\lambda e^x + \mu e^{2x}$ avec $\lambda$ et $\mu$ deux r{\'e}els.
+ Ici, vu la forme du second membre, on va pouvoir trouver une solution particuli{\`e}re de la forme $a\cos(x) + b\sin(x)$. Ce qui donne :\\
+ $-a\cos(x) -b\sin(x) +3a\sin(x) -3b\cos(x) +2a\cos(x) +2b\sin(x)=10\cos(x)$. Soit \\
+ $(a-3b)\cos(x) +(b+3a)\sin(x)=10\cos(x)$ soit $b=-3a$ et en
+ rempla{\c c}ant, $a+9a=10a=10$ donc \ $a=1$ et $b=-3$.\\
+Ainsi on a trouv{\'e} une solution particuli{\`e}re $y_0(x) =
+\cos(x)-3\sin(x)$. On sait donc que toutes les solutions de (E) sont
+de la forme $y_0$ plus une solution de l'{\'e}quation homog{\`e}ne, {\`a} savoir
+de la forme $y(x) = \cos(x)-3\sin(x) + \lambda e^x + \mu e^{2x}$. Pour
+trouver $\lambda$ et $\mu$ on utilise les conditions initiales
+$y(0)=1$ et $y'(0)=-3$ ce qui en fait donne $\lambda = \mu = 0$ donc
+$f(x)=\cos(x) -3 \sin(x)$. \par
+\textbf{b)} Si $g$ est une solution de (E) diff{\'e}rente de $f$ , d'apr{\`e}s
+le a) elle est
+de la forme $\cos(x)-3\sin(x) +\lambda e^x + \mu e^{2x}$ avec
+$(\lambda,\mu) \neq (0,0)$ Dans ce cas , si $\mu \neq 0$ on a $g(x)
+\sim_{+ \infty} \mu e^{2x}$ donc $|g(x)| \sim | \mu | e^{2x}$ donc
+tend vers $+$ l'infini. Si $\mu =0$ mais $\lambda \neq 0$ on a $| g(x)
+| \sim |\lambda| e^x$ qui tend aussi vers plus l'infini. 
+
+\subsection*{Exercice 5}
+On r{\'e}sout l'{\'e}quation caract{\'e}ristique : $r²-5r+6=0=(r-2)(r-3)$. Donc
+$u_n=\lambda 2^n + \mu 3^n$. Puis $u_0=\lambda + \mu =1 = 2 \lambda +3
+\mu$. D'o{\`u} $u_1-2u_0 = 1-2 = -1 = \mu$. Et $\lambda = 2$. Donc $u_n =
+2.2^n-3^n$.\\
+Alors si on avait $u_n=0$ pour un $n\in \mathbb{N}$ on aurait
+$2.2^n=3^n$ ce qui est impossible car 2 et 3 sont premiers entre
+eux. On peut donc consid{\'e}rer la suite $\frac{u_{n+1}}{u_n}$. De plus
+$u_n = 2.2^n -3^n \sim_{+\infty}-3^n$ , donc $\frac{u_{n+1}}{u_n} \sim
+\frac{-3^{n+1}}{-3^n} = 3$. Donc $\frac{u_{n+1}}{u_n} \xrightarrow[n
+  \to +\infty]{} 3$.
+
+\subsection*{Exercice 6}
+Tout simplement pour $h\neq 0$ , \ $\frac{g(h)-g(0)}{h-0} =
+\frac{h.f(h) -0}{h} = f(h) \xrightarrow[h \to 0] {} f(0)$ car $f$ est
+continue (donc en particulier en 0). Donc $g$ est d{\'e}rivable en 0 et
+$g'(0)=f(0)$.
+
+\subsection*{Exercice 7}
+Le DL en $0$ de $\sqrt{1+u}$ est $1+\frac{u}{2} - \frac{u^2}{8} +
+\frac{u^3}{16}$. On btient donc :
+$$ \sqrt{1-\sin(x)} = \sqrt{1-x+\frac{x^3}{6} + \circ (x^3) }$$
+$$=1+\frac{-x+\frac{x^3}{6}}{2} - \frac{x^2}{8}-\frac{x^3}{16} + \circ
+(x^3)$$
+$$=1-\frac{x}{2}-\frac{x^2}{8}+\frac{x^3}{48}+ \circ (x^3) $$
+ 
+
+
+\bibliographystyle{alpha}
+\bibliography{bibli}
+
+
+
+
+
+\end{document}

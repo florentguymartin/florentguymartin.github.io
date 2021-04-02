@@ -1,0 +1,505 @@
+\documentclass[a4paper, 10pt]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{mathdots}
+\usepackage{theorem}
+
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM121 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Correction Interro n$^o$ 3}
+\end{center}
+\normalsize
+
+\medskip
+\noindent
+\textbf{Exercice 1:}\\
+On trouve 
+$\det(A) = 6 \neq 0$ donc $A$ est inversible. On calcule son inverse avec la méthode du pivot de Gauss : 
+
+\begin{align*}
+\begin{pmatrix}
+ 3 & 4 & 4 \\
+1 & 2 & 1 \\
+0 & -2 & 4 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 1 & 0 & 0 \\
+0 & 1 & 0 \\
+ 0 & 0 & 1 
+\end{pmatrix}
+\right. 
+&
+\xrightarrow[]{L_1 \leftrightarrow L_2 }
+&
+\begin{pmatrix}
+ 1 & 2 & 1 \\
+3 & 4 & 4 \\
+0 & -2 & 4 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 0 & 1 & 0 \\
+1 & 0 & 0 \\
+ 0 & 0 & 1 
+\end{pmatrix}
+\right. 
+&
+\xrightarrow[]{L_2 \leftarrow L_2-3L_1 } \\
+\begin{pmatrix}
+ 1 & 2 & 1 \\
+0 & -2 & 1 \\
+0 & -2 & 4 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 0 & 1 & 0 \\
+1 & -3 & 0 \\
+ 0 & 0 & 1 
+\end{pmatrix}
+\right. 
+&
+\xrightarrow[]{L_2 \leftarrow \frac{L_2}{-2} }
+&
+\begin{pmatrix}
+ 1 & 2 & 1 \\
+0 & 1 & \frac{-1}{2} \\
+0 & -2 & 4 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 0 & 1 & 0 \\
+\frac{-1}{2} & \frac{3}{2} & 0 \\
+ 0 & 0 & 1 
+\end{pmatrix}
+\right. 
+&
+\xrightarrow[L_3 \leftarrow L_3 +2L_2]{L_1 \leftarrow L_1 - 2 L_2 }
+\\
+\begin{pmatrix}
+ 1 & 0 & 2 \\
+0 & 1 & \frac{-1}{2} \\
+0 & 0 & 3 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 1 & -2 & 0 \\
+\frac{-1}{2} & \frac{3}{2} & 0 \\
+ -1 & 3 & 1 
+\end{pmatrix}
+\right. 
+&
+\xrightarrow[]{L_3 \leftarrow \frac{L_3}{3} }
+&
+\begin{pmatrix}
+ 1 & 0 & 2 \\
+0 & 1 & \frac{-1}{2} \\
+0 & 0 & 1 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 1 & -2 & 0 \\
+\frac{-1}{2} & \frac{3}{2} & 0 \\
+ \frac{-1}{3} & 1 & \frac{1}{3} 
+\end{pmatrix}
+\right. 
+&
+\xrightarrow[L_2 \leftarrow L_2+ \frac{1}{2}L_3]{L_1 \leftarrow L_1-2L_3 }
+\\
+\begin{pmatrix}
+ 1 & 0 & 0 \\
+0 & 1 & 0\\
+0 & 0 & 1 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ \frac{5}{3} & -4 & \frac{-2}{3} \\
+\frac{-2}{3} & 2 & \frac{1}{6} \\
+ \frac{-1}{3} & 1 & \frac{1}{3} 
+\end{pmatrix}
+\right. 
+\end{align*}
+On vérifie bien que 
+$\begin{pmatrix} 
+ \frac{5}{3} & -4 & \frac{-2}{3} \\
+\frac{-2}{3} & 2 & \frac{1}{6} \\
+ \frac{-1}{3} & 1 & \frac{1}{3} 
+\end{pmatrix}
+\begin{pmatrix}
+ 3 & 4 & 4 \\
+1 & 2 & 1 \\
+0 & -2 & 4 
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 1 & 0 & 0 \\
+0 & 1 & 0\\
+0 & 0 & 1 
+\end{pmatrix}$, 
+donc $A^{-1} = 
+\begin{pmatrix} 
+ \frac{5}{3} & -4 & \frac{-2}{3} \\
+\frac{-2}{3} & 2 & \frac{1}{6} \\
+ \frac{-1}{3} & 1 & \frac{1}{3} 
+\end{pmatrix}$.
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+On vérifie que les points ne sont pas alignés. $(ABC)$ est donc le plan passant par 
+$A$ et dirigé par les vecteurs libres 
+$\overrightarrow{AB}= \begin{pmatrix} 0 \\1 \\ 2 \end{pmatrix}$ et 
+$ \overrightarrow{AC} = \begin{pmatrix} -1\\ 0 \\ 1\end{pmatrix}$.\\
+Leur produit vectoriel est \\
+$\begin{pmatrix} 0 \\1 \\ 2 \end{pmatrix} \wedge 
+\begin{pmatrix} -1\\ 0 \\ 1\end{pmatrix}=
+\begin{pmatrix} 1 \\ -2 \\ 1.\end{pmatrix}$ qui est donc un vecteur normal à $(ABC)$.
+Le plan a donc une équation de la forme
+$x -2y +z =d$ . Pour trouver $d$ on remplace cette équation avec les coordonnées de $A$ :\\
+$1-2+1=d=0$\\
+Donc $x -2y +z =0$ est une équation de $(ABC)$.
+\vspace{0.4cm}
+\\
+\noindent
+\textbf{Exercice 3:}\\
+
+\[
+\begin{vmatrix}
+a & 0 & \cdots & \cdots & \cdots & \cdots &0 & b \\
+0 & a & \ddots  &       &      &\iddots & b & 0 \\
+\vdots & \ddots & \ddots & 0  & 0 &\iddots & \iddots  & \vdots \\
+\vdots &  & 0 & a & b & 0 & &\vdots \\
+\vdots & & 0 & b & a & 0 & & \vdots \\
+\vdots & \iddots  & \iddots & 0 & 0 & \ddots & \ddots & \vdots \\
+0 & b & \iddots & & & \ddots & a & 0 \\
+b &0 & \cdots & \cdots & \cdots & \cdots & 0 & a
+\end{vmatrix}
+\xrightarrow{ 
+\begin{matrix}
+C_1 & \leftarrow &C_1 +C_{2n} \\
+C_2 &\leftarrow & C_2 +C_{2n-1} \\
+& \vdots & \\
+C_{n} & \leftarrow &  C_n + C_{n+1}
+\end{matrix}
+}
+\begin{vmatrix}
+a+b & 0 & \cdots & \cdots & \cdots & \cdots &0 & b \\
+0 & a+b & \ddots  &       &      &\iddots & b & 0 \\
+\vdots & \ddots & \ddots & 0  & 0 &\iddots & \iddots  & \vdots \\
+\vdots &  & 0 & a+b & b & 0 & &\vdots \\
+\vdots & & 0 & a+b & a & 0 & & \vdots \\
+\vdots & \iddots  & \iddots & 0 & 0 & \ddots & \ddots & \vdots \\
+0 & a+b & \iddots & & & \ddots & a & 0 \\
+a+b &0 & \cdots & \cdots & \cdots & \cdots & 0 & a
+\end{vmatrix}
+\]
+\[
+\xrightarrow{ 
+\begin{matrix}
+L_{n+1} & \leftarrow & L_{n+1} -L_n \\
+L_{n+2} &\leftarrow & L_{n+2} - L_{n-1} \\
+& \vdots & \\
+L_{2n} & \leftarrow &  L_{2n} - L_1
+\end{matrix}
+}  
+\begin{vmatrix}
+a+b & 0 & \cdots & \cdots & \cdots & \cdots &0 & b \\
+0 & a+b & \ddots  &       &      &\iddots & b & 0 \\
+\vdots & \ddots & \ddots & 0  & 0 &\iddots & \iddots  & \vdots \\
+\vdots &  & 0 & a+b & b & 0 & &\vdots \\
+\vdots & &  & 0 & a-b & 0 & & \vdots \\
+\vdots &   & &  & 0 & \ddots & \ddots & \vdots \\
+0 &  &  & & & \ddots & a-b & 0 \\
+0 &0 & \cdots & \cdots & \cdots & \cdots & 0 & a-b
+\end{vmatrix} 
+=(a+b)^n(a-b)^n
+\]
+
+\bigskip
+\noindent
+\textbf{Exercice 4:}\\
+\begin{enumerate}
+\item
+$P^{-1} =
+\begin{pmatrix}
+0 & 1 \\ 1 & -2
+\end{pmatrix}$. 
+\item
+En faisant quelques essais, on a le sentiment que la formule doit être 
+$T^n = 
+\begin{pmatrix}
+2^n & n2^{n-1} \\
+0 & 2^n
+\end{pmatrix}
+$. \\
+Montrons par récurrence que pour tout $n\geq 1$, 
+$T^n = 
+\begin{pmatrix}
+2^n & n2^{n-1} \\
+0 & 2^n
+\end{pmatrix}
+$. \\
+Pour $n=1$ le résultat est vrai. \\
+Soit $n\in \N^*$, et supposons que 
+$T^n = 
+\begin{pmatrix}
+2^n & n2^{n-1} \\
+0 & 2^n
+\end{pmatrix}
+$.
+Alors 
+$T^{n+1} =T^n T = 
+\begin{pmatrix}
+2^n & n2^{n-1} \\
+0 & 2^n
+\end{pmatrix}
+\begin{pmatrix}
+ 2&1\\ 0 & 2
+\end{pmatrix}
+=
+\begin{pmatrix}
+2\cdot 2^n& 2^n +2n2^{n-1} \\
+0 & 2\cdot 2^n
+\end{pmatrix}
+=
+\begin{pmatrix}
+2^{n+1} & (n+1)2^n \\
+0 & 2^{n+1}
+\end{pmatrix}
+$, ce qui achève notre récurrence.
+
+\item 
+On montre par récurrence que pout tout $n\in \N^*$, 
+$(P^{-1}MP)^n=P^{-1}M^nP$.\\
+Pour $n=1$ c'est vrai. \\
+Soit $n\in \N^*$. 
+Supposons que 
+$(P^{-1}MP)^n=P^{-1}M^nP$. Alors 
+$(P^{-1}MP)^{n+1}=
+(P^{-1}MP)^n (P^{-1}MP)=
+P^{-1}M^nP P^{-1}MP = 
+P^{-1}M^nMP =P^{-1}M^{n+1}P$, ce qui achève notre récurrence.\\
+De plus 
+$
+P^{-1}MP=
+\begin{pmatrix}
+0 & 1 \\
+1 & -2
+\end{pmatrix}
+\begin{pmatrix}
+4 & -4\\1&0
+\end{pmatrix}
+\begin{pmatrix}
+2&1\\1&0
+\end{pmatrix}
+=
+\begin{pmatrix}
+1&0\\2&-4
+\end{pmatrix}
+\begin{pmatrix}
+2&1\\1&0
+\end{pmatrix}
+=\begin{pmatrix}
+2&1\\0&2
+\end{pmatrix}
+=T$.\\
+Ainsi, $P^{-1}M^nP=T^n$. En multipliant à gauche par $P$ et à droite par 
+$P^{-1}$, on en déduit que 
+$M^n = PT^nP^{-1}$.\\
+En utilisant le résultat de la question précédente, on en déduit que \\
+$M^n = 
+\begin{pmatrix}
+2&1\\1&0
+\end{pmatrix}
+\begin{pmatrix}
+2^n & n2^{n-1} \\
+0 & 2^n
+\end{pmatrix}
+\begin{pmatrix}
+0 &1 \\
+1 & -2
+\end{pmatrix}
+=
+\begin{pmatrix}
+2^{n+1} & (n+1)2^n \\
+2^n & n2^{n-1}
+\end{pmatrix}
+\begin{pmatrix}
+0&1\\1&-2
+\end{pmatrix}
+=
+\begin{pmatrix}
+(n+1)2^n & -n2^{n+1} \\
+n2^{n-1} & -(n-1)2^n
+\end{pmatrix}
+$.
+\item 
+\begin{enumerate}
+\item
+On trouve 
+$\begin{pmatrix}
+u_{n+2} \\u_{n+1}
+\end{pmatrix}
+=
+\begin{pmatrix}
+4u_{n+1} -4u_n \\ u_{n+1}
+\end{pmatrix}=
+ \begin{pmatrix}
+4 & -4 \\ 1 &0
+\end{pmatrix}
+\begin{pmatrix}
+u_{n+1} \\u_n
+\end{pmatrix}
+$, donc 
+$A= \begin{pmatrix}
+4&-4\\1&0
+\end{pmatrix} =M
+$ marche (et c'est en fait la seule matrice qui marche).\\
+On montre par récurrence que pour tout $n\in \N$,  
+$\begin{pmatrix}
+u_{n+1} \\u_n
+\end{pmatrix} =
+A^n \begin{pmatrix}
+4\\3
+\end{pmatrix}$.\\
+Pour $n=0$, on a $A^0 = I_2$, et 
+$\begin{pmatrix}
+u_1\\u_0
+\end{pmatrix}
+=\begin{pmatrix}
+4\\3
+\end{pmatrix}
+=I_2 \begin{pmatrix}
+4\\3
+\end{pmatrix}
+=
+A^0
+\begin{pmatrix}
+4\\3
+\end{pmatrix}$. \\
+Si le résultat est vrai pour $n$, d'après ce qu'on a montré au début de la question,
+$\begin{pmatrix}
+u_{n+2}\\u_{n+1}
+\end{pmatrix}=
+A
+\begin{pmatrix}
+u_{n+1} \\u_n
+\end{pmatrix}
+=A\cdot A^n 
+\begin{pmatrix}
+4\\3
+\end{pmatrix}
+=A^{n+1}
+\begin{pmatrix}
+4\\3
+\end{pmatrix}$ ce qui achève notre récurrence.
+
+\item
+D'après la question précédente 
+$\begin{pmatrix}
+u_{n+1} \\u_n
+\end{pmatrix}
+=A^n \begin{pmatrix}
+4\\3
+\end{pmatrix}
+= M^n 
+\begin{pmatrix}
+4\\3
+\end{pmatrix}$.
+On utilise maintenant le résultat de la question $(3)$ pour en déduire que 
+$\begin{pmatrix}
+u_{n+1} \\u_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+(n+1)2^n & -n2^{n+1} \\
+n2^{n-1} & -(n-1)2^n
+\end{pmatrix}
+\begin{pmatrix}
+4\\3
+\end{pmatrix}
+=
+\begin{pmatrix}
+4(n+1)2^n - 3n2^{n+1} \\
+4n2^{n-1} - 3(n-1)2^n
+\end{pmatrix}
+$.\\
+Ainsi, 
+$u_n = 4n2^{n-1} -3(n-1)2^n =
+2n2^n - 3n2^n +3\cdot 2^n 
+=
+2^n(3-n)$.
+En particulier, $u_n \neq 0$ quand $n\neq 3$, on en déduit que si 
+$n\geq 4$, $u_n \neq 0$.
+Donc pour $n\in \N$, $u_{n+4} \neq 0$, et 
+\[\frac{u_{n+5}}{u_{n+4}}=
+\frac{2^{n+5}(3-(n+5))}{2^{n+4}(3-(n+4))}
+=\frac{2(-n-2)}{-n-1} \xrightarrow[n\to +\infty]{} 2.\]
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
+
+

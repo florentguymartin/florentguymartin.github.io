@@ -1,0 +1,126 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+
+
+
+
+\newtheorem{Theoreme}{Th{\'e}or{\`e}me}[section]
+\newtheorem{Definition}{D{\'e}finition}[section]
+\newtheorem{Prop}{Proposition}[section]
+\newtheorem{Lemme}{Lemme}[section]
+
+\begin{document}
+
+\title{Controle 1 LM 121}
+
+\renewcommand{\labelitemi}{$\circ$}
+Barème : 5 points par question. 
+\begin{enumerate}
+ \item[1]
+Soit $a\in \mathbb{C}^*$. Montrer qu'il existe exactement deux nombres complexes $z$ tels que $z^2 =a$.
+\par
+{\itshape Solution} : En écrivant sous forme polaire $a=re^{i \theta}$, on voit que $z_0=\sqrt{r} e^{i \frac{\theta}{2}}$ et 
+$-\sqrt{r}e^{i \frac{\theta}{2}} =-z_0$ sont deux solutions distinctes. Montrons que ce sont les seules : si $z\in \mathbb{C}$ tel que $z^2 =a$ alors en soustrayant l'égalité $z_0^2=a$ en obtient $z^2-z_0^2=0$ soit $(z-z_0)(z+z_0)=0$ d'où on déduit que $z=z_0$ ou $z=-z_0$.
+
+
+\item[2]
+Donner les racines carrées de $2i -5$.\\
+{\itshape Solution}
+On cherche une racine carrée sous la forme $(a+ib)$ avec $a$ et $b$ réels, et l'équation $(a+ib)^2 = a^2-b^2 +i2ab$ nous amène donc à résoudre le système 
+\begin{align*}
+ a^2-b^2 &= -5 \\
+2ab &= 2
+\end{align*}
+A ce stade, en posant avec la deuxième équation $b=\frac{1}{a}$ , et en la réinjectant dans la première, on peut résoudre le problème. Ou on peut avoir recours à ``l'astuce'' déjà vue en TD : si $(a+ib)^2=2i-5$ , en considérant les modules, on a $a^2+b^2 = \sqrt{29}$. En additionnant cette égalité avec le première de celle ci-dessus , on a :\\
+$2a^2 = \sqrt{29}-5 \ \Rightarrow a = + /- \frac{\sqrt{ \sqrt{29} -5 }}{\sqrt{2}}$. \\
+Si par exemple on prend $a=\frac{\sqrt{ \sqrt{29} -5 }}{\sqrt{2}}$ , finalement on a $b= \frac{\sqrt{2}}{\sqrt{\sqrt{29}-5 }} =
+\frac{\sqrt{\sqrt{29}+5}}{\sqrt{2}}$ en multipliant en bas par  $\sqrt{\sqrt{29}
++5}$. 
+Cela nous donne donc 
+$z= \frac{\sqrt{\sqrt{29}-5}}{\sqrt{2}} + i \frac{\sqrt{\sqrt{29}+5}}{\sqrt{2}}$. L'autre racine est $-z$.
+\item[3]
+soit $u=(-2,1,0)$ , \ $v=(3,0,1)$ et $w=(1,1,t)$ où $t\in \mathbb{R}$. Pour quel(s) $t$ ces trois vecteurs sont liés?\\
+
+{\itshape Solution :}
+On se demande s'il existe un triplet non nul $(a,b,c) $ tel que 
+$au +bv+cw=0$ (Il y a ici l'abus de notation, consistant à écrire $0$ à la place de $(0,0,0)$).
+On obtient le système :\\
+$\begin{array}{cccl}
+ -2a & +3b & +c &=0 \\
+a&   & +c &=0 \\
+ & b &+tc & =0
+\end{array}$
+
+On  additionne deux fois la première ligne à la deuxième pour y faire disparaître $a$ : \\
+$\begin{array}{cccl}
+  & 3b &+3c &=0 \\
+a & & +c &=0 \\
+& b & +tc & =0 
+\end{array}$ \\
+Puis on intervertit des  lignes pour se faciliter la vie:\\
+
+$\begin{array}{cccl}
+a & & +c &=0 \\ 
+& b & +tc & =0 \\ 
+& 3b &+3c &=0 
+\end{array}$ \\
+Enfin, on multiplie la deuxième ligne par $-3$ puis on l'ajoute à la troisième pour y faire se volatiliser $b$ :\\
+$\begin{array}{cccl}
+a & & +c &=0 \\ 
+& b & +tc & =0 \\ 
+&  & 3c(1-t) &=0 
+\end{array}$\\
+ On se rend compte que si $(1-t)  \neq 0$ la seule solution du système (par rapport aux variables $a,b $ et $c$) est $(0,0,0)$ , et que donc les vecteurs sont libres. En revanche, si $t=1$ , le système a des solutions non nulles : par exemple en prenant $c=1$ on doit avoir $b=-1$ et $a=-1$ et en effet pour $t=1$ on a  \\
+$-u-v+w=-(-2,1,0) -(3,0,1) +(1,1,1)=(0,0,0)$.
+\item[4]
+\begin{enumerate}
+ \item Soit $\mathcal{D}$ la droite d'équation parametrique
+\begin{align*}
+ x&=2+t \\
+y & =3+2t \\
+z & =1-t 
+\end{align*}
+Donner une équation cartésienne de $\mathcal{D}$.
+\item
+Soit $\mathcal{D'}$ la droite d'équation parametrique
+\begin{align*}
+ x &=2t \\
+y & =1-t \\
+z & = 2+2t
+\end{align*}
+$\mathcal{D}$ et $\mathcal{D'}$ ont-elles des points en commun? (dit autrement, a-t-on $\mathcal{D} \cap \mathcal{D'} =\emptyset$?)
+
+
+
+
+\end{enumerate}
+{\itshape Solution :} Pour trouver l'équation cartésienne de $\mathcal{D}$ comme $t=x-2$ les égalités correspondant à $y$ et $z$ donnent 
+\begin{align*}
+ 2x-y-1 &=0 \\
+x+z-3 &=0
+\end{align*}
+Ainsi un point de $\mathcal{D'}$ étant de la forme $(2t,1-t,2+2y)$ s'il appartenait aussi à $\mathcal{D}$ devrait aussi vérifier son équation cartésienne, à savoir :
+\begin{align*}
+ 2(2t) - (1-t)-1 &=0 \\
+2t +2+2t -3 &=0
+\end{align*}
+Ce qui aboutit à $t=\frac{2}{5}$ et $t=\frac{1}{4}$, ce qui est impossible, donc les deux droites n'ont pas de point commun.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

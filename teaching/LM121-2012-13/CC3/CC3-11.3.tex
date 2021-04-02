@@ -1,0 +1,137 @@
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{theorem}
+
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM121 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Interro n$^o$ 3}
+\end{center}
+\normalsize
+
+\medskip
+\noindent
+Question de cours : \emph{donner la définition d'une application linéaire de $\R^2$ dans $\R^2$.}
+
+\medskip
+\noindent
+\textbf{Exercice 1:}\\
+Soit $A = \begin{pmatrix} 1 & -1&2\\2&1&-2\\3&-2&1 \end{pmatrix}$.
+\begin{enumerate}
+ \item Calculer $\det (A)$.
+\item $A$ est-elle inversible? Si oui, calculer $A^{-1}$.
+\item Résoudre le système\\
+$\left\{
+\begin{array}{cccll}
+ x&-y&+2z&=&3\\
+2x&+y&-2z&=&6\\
+3x&-2y&+z&=&6
+\end{array}
+\right.
+$
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+Soir $r_1$ la rotation de centre 
+$(1,1)$ et d'angle $\frac{\pi}{2}$, et 
+$r_2$ la rotation de centre $(3,-1)$ et d'angle $\frac{\pi}{2}$.
+Calculer l'image du point $(2,-1)$ par $r_2 \circ r_1$.
+
+\bigskip
+\noindent
+\textbf{Exercice 3:}\\
+Soit $D$ le déterminant de taille $n$ suivant : 
+$D = 
+\begin{vmatrix}
+1 & 1 & 1 & \cdots & 1 \\
+1 & 1 & 0 & \cdots & 0 \\
+1 & 0 & 1 & \ddots & \vdots \\
+\vdots & \vdots & \ddots & \ddots & 0 \\
+1 & 0 & \cdots & 0 &1
+\end{vmatrix}$.\\
+Calculer $D$.
+
+\bigskip
+\noindent
+\textbf{Exercice 4:}\\
+Soit $C = 
+\begin{pmatrix}
+1 & 2 & 3 \\
+-1 & 2 & 0 \\
+1 & -1 & 1
+\end{pmatrix}
+$.\\
+a) Calculer $C^3 -4C^2$. \\
+b) Trouver $\lambda$ et $\mu \in \mathbb{R}$ tels que 
+$C^3-4C^2 +\lambda C +\mu I_3=0$. \\
+c) En déduire $C^{-1} $
+
+
+
+
+\end{document}
+
+

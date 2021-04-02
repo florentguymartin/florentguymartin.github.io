@@ -1,0 +1,79 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+
+
+
+
+\newtheorem{Theoreme}{Th{\'e}or{\`e}me}[section]
+\newtheorem{Definition}{D{\'e}finition}[section]
+\newtheorem{Prop}{Proposition}[section]
+\newtheorem{Lemme}{Lemme}[section]
+
+\begin{document}
+
+\title{Contrôle 3}
+\maketitle
+\renewcommand{\labelitemi}{$\circ$}
+
+\begin{enumerate}
+ \item 
+Soit $A = \begin{pmatrix} 1 & -1&2\\2&1&-2\\3&-2&1 \end{pmatrix}$.
+\begin{enumerate}
+ \item Calculer $Det (A)$.
+\item $A$ est-elle inversible? Si oui, calculer $A^{-1}$.
+\item Résoudre le système
+$$\begin{array}{cccll}
+ x&-y&+2z&=&3\\
+2x&+y&-2z&=&6\\
+3x&-2y&+z&=&6
+\end{array}
+$$
+\end{enumerate}
+
+\item
+\begin{enumerate}
+ \item Soit 
+$$\begin{array}{crcl}
+\Phi :&  \mathbb{R}^2 & \to & \mathbb{R}^2 \\
+ & (x,y) & \mapsto & (\frac{y^2}{1+x^2},x+2y)
+\end{array}
+$$
+$\Phi$ est-elle une application linéaire? Est-elle bijective?
+\item
+Soit 
+$$\begin{array}{crcl}
+\Psi :&  \mathbb{R}^3 & \to & \mathbb{R}^3 \\
+ & (x,y,z) & \mapsto & (2x+y-z,x-z,x+y+z)
+\end{array}
+$$
+$\Psi$ est-elle une application linéaire? Est-elle bijective?
+\end{enumerate}
+
+\item
+Résoudre le système
+$$\begin{array}{cccl}
+ x&+2y&+z&=0\\
+2x&-y&+z&=4\\
+3x&+y&+2z&=4\\
+5x&&+3z&=8
+\end{array}$$
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

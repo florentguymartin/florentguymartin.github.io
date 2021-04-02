@@ -1,0 +1,250 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}[section]
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{exercice}[thm]{Ex}{\theorembodyfont{\upshape}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+
+\newcommand{\pmm}[1]{\ \text{#1}} %pour insérer la ponctuation dans les équations hors-texte avec tjrs le même espace
+\newcommand{\std}[1]{\mathbf{#1}}
+\newcommand{\I}[1][]{\std{I}_{#1}} \newcommand{\ind}[1]{\std{1}_{#1}}
+\renewcommand{\ge}{\geqslant} \renewcommand{\le}{\leqslant}
+\newcommand{\eps}{\varepsilon} \newcommand{\truc}{\,\cdot\,}
+
+\DeclareMathOperator{\tr}{tr}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Fiche d'exercices n$^o$ 3}
+\end{center}
+\normalsize
+\section{Formes lin\'eaires et espace dual}
+
+\begin{exercice}
+Dans $\R^2$, on consid\`ere la base $v_1= \begin{pmatrix} 2\\1 \end{pmatrix}$, $v_2= \begin{pmatrix} 5\\3 \end{pmatrix}$. Calculer la base duale.
+\end{exercice}
+
+\begin{exercice}
+Donner une base de l'espace des matrices $M_2(\R)$ et sa duale.
+\end{exercice}
+
+\begin{exercice}
+On consid\`ere l'espace vectoriel des polyn\^omes r\'eels $E=\R_2[X]$. 
+On d\'efinit trois fonctions $f_0,f_1,f_2$ de $E$ vers $\R$ par $f_i(P)=P(i)$ pour tout $P$ dans $E$.
+\begin{enumerate}
+\item Montrer que les $f_i$ sont des applications lin\'eaires.
+\item Montrer que $\{ f_0,f_1,f_2\}$ est une base de $E^*$.
+\item Trouver la base pr\'eduale $\{ e_0,e_1,e_2\}$ de E, c'est-\`a-dire la base telle que $e_i^*=f_i$, $i=0,1,2$.
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+Si $H$ est un sous-espace vectoriel d'un espace vectoriel $E$, on pose 
+$H^{\bot} := \{ \varphi \in E^* \ \big| \ \varphi_{|H} =0 \}$. \\
+Soient $F$ et $G$ deux sous-espaces d'un espace vectoriel $E$. Montrer que :
+\begin{enumerate}
+\item $F \subset G \Rightarrow G^{\bot} \subset F^{\bot}$,
+\item $(F + G)^\bot = F^\bot \cap G^\bot$,
+\item $(F\cap G)^\bot = F^\bot + G^\bot$,
+\item $E=F\oplus G \Rightarrow E^*=F^\bot\oplus G^\bot.$
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice} Calcul du dual de $M_n(\C)$.
+\begin{enumerate}
+\item Soit $A \in M_n(\C)$. Montrer que l'application $\varphi_A : M_n(\C) \to \C,\ M \mapsto \tr(AM)$ est un \'el\'ement de $M_n(\C)^*$.
+\item Montrer alors que l'application $\varphi : M_n(\C) \to M_n(\C)^*,\ A \mapsto \varphi_A$ est lin\'eaire et injective.
+\item En d\'eduire que tout \'el\'ement de $M_n(\C)^*$ s'\'ecrit $\varphi_A$ pour un unique $A \in M_n(\C)$.
+\end{enumerate}
+\end{exercice}
+
+\section{Formes bilin\'eaires}
+
+\begin{exercice}
+Soit $E$ un $\std{K}$-espace vectoriel ($\std{K}=\R$ ou $\C$). On
+note $\mathcal{S}_2(E)$ (resp. $\mathcal{A}_2(E)$) l'espace des
+formes bilin\'eaires sym\'etriques (resp. antisym\'etriques) de $E$.
+Montrer que~:
+\begin{equation*}
+\mathcal{L}_2(E)=\mathcal{S}_2(E)\oplus\mathcal{A}_2(E).
+\end{equation*}
+\end{exercice}
+
+\begin{exercice}\label{exercice:ps}
+Dans chacun des exemples suivants, montrer que $\varphi$ est un
+produit scalaire sur $E$.
+\begin{enumerate}
+  \item $E=\R^n$, $n\ge2$ et
+  $\varphi(x,y)=\sum\limits_{i=1}^{n}x_iy_i$,
+  \item $E=M_n(\R)$, $n\ge2$ et $\varphi(A,B)=\tr(^{t}\!AB)$,
+  \item\label{ps:poly} $E=\R_n\lbrack X\rbrack$, $n\ge2$ et
+  $\varphi(P,Q)=\int_0^1P(t)Q(t)dt$,
+  \item $E=\ell^2(\N)=\big\{u=(u_n)_n\in\R^\N\, \big\lvert\, \sum\limits_{n\ge
+  0}u_n^2<+\infty\big\}$ et
+  $\varphi(u,v)=\sum\limits_{n=0}^{\infty}u_nv_n$. \\
+  \lbrack Dans le 4., commencer par montrer que $\varphi$ est bien
+  d\'efinie.\rbrack
+\end{enumerate}
+\end{exercice}
+
+\newpage
+\begin{exercice}
+Soient $A$ et $B$ deux matrices de $M_n(\R)$, on pose
+\begin{equation*}
+    \varphi(A,B)=\tr(AB).
+\end{equation*}
+\begin{enumerate}
+  \item Si $A=((a_{ij}))_{1\le i,j\le n}$ et $B=((b_{ij}))_{1\le i,j\le
+  n}$, montrer que~:
+  \begin{equation*}
+    \tr(AB)=\sum_{1\le i,j\le n}a_{ij}b_{ji}.
+  \end{equation*}
+  \item La forme $\varphi$ est-elle bilin\'eaire? sym\'etrique?
+  \item Supposons \`a pr\'esent, $A$ sym\'etrique et $B$ antisym\'etrique.
+  Montrer alors~:
+  \begin{itemize}
+    \item $\varphi(A,A)\ge 0$,
+    \item $\varphi(B,B)\le 0$,
+    \item $\varphi(A,B)=0$.
+  \end{itemize}
+  \item La forme $\varphi$ est-elle d\'eg\'en\'er\'ee? Est-elle un produit scalaire?
+  \item On note $S_n$, resp. $AS_n$, le s.e.v des matrices sym\'etriques, resp. anti-sym\'etriques. 
+  Donner $S_n^\bot$ et $AS_n^\bot$.
+\end{enumerate}
+\end{exercice}
+
+\begin{exercice}
+On consid\`ere l'application suivante d\'efinie sur $\R^3\times\R^3$~:
+\begin{equation*}
+    \big((x,y,z),(x',y',z')\big)\mapsto \Bigg(\begin{vmatrix}y & z \\
+    y' & z'\\ \end{vmatrix},\begin{vmatrix}z & x \\
+    z' & x'\\ \end{vmatrix},\begin{vmatrix}x & y \\
+    x' & y'\\ \end{vmatrix}\Bigg)=(x,y,z)\wedge(x',y',z').
+\end{equation*}
+\begin{enumerate}
+  \item Montrer qu'elle est bilin\'eaire altern\'ee.
+  \item Montrer que si $
+{e_1}$ et $
+{e_2}$ sont
+  deux vecteurs de $\R^3$, alors~:
+$$
+    (
+{e_1}\wedge
+{e_2})\cdot
+{e_1} = 0, \qquad
+    (
+{e_1}\wedge
+{e_2})\cdot
+{e_2} = 0.
+$$
+  \item En d\'eduire que, si $e_1$ et $e_2$ sont lin\'eairement ind\'ependants, \[\textrm{Vect}(
+{e_1},
+{e_2})=
+  \textrm{Vect}(
+{e_1}\wedge
+{e_2})^\bot=\big\{
+{x}\in\R^3\, \big\lvert\,
+  (
+{e_1}\wedge
+{e_2})\cdot
+{x}=0\big\}\]
+\end{enumerate}
+\noindent\emph{Application.} D\'eterminer une \'equation du plan
+engendr\'e par les vecteurs ${e_1}=(1,2,-3)$ et
+$
+{e_2}=(-2,0,1)$.
+\end{exercice}
+
+\begin{exercice}
+On reprend le produit scalaire \ref{ps:poly}. de l'exercice
+\ref{exercice:ps} avec $n=2$~:
+\begin{equation*}
+    \forall\, P,\, Q\in\R_2\lbrack X\rbrack,\quad
+    \varphi(P,Q)=\int_0^1P(t)Q(t)dt.
+    \end{equation*}
+\'Ecrire la matrice de $\varphi$ dans la base canonique de
+$\R_2\lbrack X\rbrack$. Faire de m\^eme dans la base
+$\mathcal{B}=\big(1,X,X^2-X+\frac{1}{6}\big)$.
+\end{exercice}
+
+
+\begin{exercice}
+On consid\`ere la forme bilin\'eaire $b:\R^3\times \R^3\rightarrow \R$
+dont la matrice dans la base canonique est
+$$
+B=\dfrac{1}{9}
+\begin{pmatrix}
+2&-2&10\\
+-2&11&8\\
+10&8&5
+\end{pmatrix}
+$$
+\begin{enumerate}
+  \item La forme $b$ est-elle sym\'etrique? Que vaut $b\big((1,1,1),(-1,-1,-1)\big)$, $b\big((x_1,x_2,x_3),(x_1,x_2,x_3)\big)$?
+  \item Montrer que $1$ et $-1$ sont des valeurs propres pour $B$. Pouvez-vous trouver une autre valeur propre pour $B$?
+  \item Montrer que la matrice $B$ est diagonalisable et donner une matrice $P$ telle que 
+  $P^{-1}BP$ soit diagonale.
+  \item V\'erifier que pour la matrice $P$ trouv\'ee $^{t}\!PP$ est diagonale \`a coefficients strictement positifs.
+  \item Construire \`a partir de $P$ une matice $P'$ telle que $^{t}\!P'P'=I$.
+  \item En d\'eduire une base de $\R^3$ dans laquelle la matrice de $b$ est diagonale.
+\end{enumerate}
+\end{exercice}
+
+\end{document}
+
+

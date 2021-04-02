@@ -1,0 +1,158 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Examen final, 16 janvier 2013}
+\end{center}
+\normalsize
+
+\medskip
+\noindent
+\textbf{Exercice 1:}\\
+\begin{enumerate}
+\item
+Donner 3 matrices de $O(2) \setminus SO(2)$ (c'est à dire des 
+matrices qui sont dans $O(2)$ mais pas dans $SO(2)$). 
+
+\item Montrer que si $P,Q \in O(3)$, alors 
+$PQ \in O(3)$.
+
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+Soit $f$ l'application linéaire de  $\R^2$ dans $\R^3$ dont la matrice dans la 
+base canonique est 
+$\begin{pmatrix}
+2&1\\
+1&0\\
+0&2
+\end{pmatrix}
+$. 
+\begin{enumerate}
+
+\item Montrer que Im$(f)$ est un plan de $\R^3$ dont on donnera une équation 
+cartésienne.
+\item 
+Est-ce que 
+$v=(1,1,1) \in$ Im$(f)$?
+\item Montrer qu'il existe un unique $u \in \R^2$ tel que 
+$\| f(u) - v\|$ soit minimale, et déterminer ce $u$. 
+\item Donner la matrice (dans la base canonique) de la symétrie orthogonale par rapport à 
+Im$(f)$.
+\end{enumerate}
+\medskip
+\noindent
+\textbf{Exercice 3:}\\
+Soit $q$ la forme quadratique de 
+$\R^3$ définie par 
+\[ q(x,y,z) = 3x^2 +y^2 +2z^2 +4xz +4yz\]
+\begin{enumerate}
+\item 
+Donner la matrice associée à $q$ dans la base canonique de $\R^3$.
+\item 
+Déterminer $\mathcal{B}$ une base orthonormée (pour le produit scalaire usuel de $\R^3$) 
+qui soit aussi orthogonale pour $q$. 
+
+\item Existe-t-il $u\in \R^3$ tel que 
+$q(u)<0$ et si oui donner un tel $u$.
+
+\item 
+Montrer que si $v\in \R^3$ et $\|v\| \leq 1$, alors 
+$-1 \leq q(v) \leq 5$.
+
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 4:}\\
+Soit 
+\[
+\begin{array}{cccc}
+f : & \R_2[X]\times \R_2[X] & \to & \R \\
+    &  (P,Q)  & \mapsto & \int_{-1}^1 xP(x)Q(x)dx
+    \end{array}
+    \]
+    
+\begin{enumerate}
+\item 
+Montrer brièvement que $f$ est une application bilinéaire symétrique.
+\item 
+Soit $\mathcal{B} = \{ 1,X,X^2\}$ la base canonique de $ \R_2[X]$. Calculer la matrice $M$ de 
+$f$ dans la base $\mathcal{B}$.
+\item Calculer la signature de la forme quadratique $q$ associée à $f$.
+\end{enumerate}
+
+
+
+
+
+
+
+\end{document}
+
+

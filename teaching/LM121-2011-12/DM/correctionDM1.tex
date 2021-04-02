@@ -1,0 +1,175 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+
+
+
+\newtheorem{Theoreme}{Th{\'e}or{\`e}me}[section]
+\newtheorem{Definition}{D{\'e}finition}[section]
+\newtheorem{Prop}{Proposition}[section]
+\newtheorem{Lemme}{Lemme}[section]
+
+\begin{document}
+
+\title{Correction du DM 1}
+\maketitle
+
+
+\begin{enumerate}[(a)]
+ 
+\item
+$$\frac{4+i}{5i-3} = \frac{(4+i)(-3-5i)}{(5i-3)(-3-5i)} 
+= \frac{-12 -20i -3i+5}{25+9} = \frac{-7}{36} -i\frac{23}{36}$$
+
+\vspace{4mm}
+
+\item
+$$|z| = \sqrt{(\frac{\sqrt{10}}{2})^2 + (\frac{\sqrt{10}}{2})^2}
+= \sqrt{\frac{5}{4} + \frac{5}{4} } = \frac{\sqrt{10} }{\sqrt{2} } $$
+Dans l'écriture 
+$z=re^{i\theta}$, on a $r= |z| = \frac{\sqrt{10}}{\sqrt{2}}$.
+Ainsi 
+$$e^{i\theta} = \frac{z \sqrt{2} }{\sqrt{10} }  = \frac{z}{r}
+ \frac{ \sqrt{2} } { \sqrt{10} } (- \frac{ \sqrt{10} }{2} - i \frac{ \sqrt{10} }{2 } ) =
+-\frac{ \sqrt{2} }{2} - i \frac{\sqrt{2}}{2} 
+= -(\frac{\sqrt{2}}{2} + i \frac{\sqrt{2} }{2} ) $$
+On sait que 
+$\frac{\sqrt{2} }{2} + i \frac{\sqrt{2}}{2}$ 
+correspond à 
+$\cos(\frac{\pi}{4} ) + i \sin ( \frac{\pi}{4} ) = e^{i \frac{\pi}{4} } $, c'est 
+à dire que son argument est $\frac{\pi}{4}$.
+Pour trouver l'argument de 
+$-(\frac{\sqrt{2}}{2} + i \frac{\sqrt{2} }{2} ) = -e^{i\frac{\pi}{4}}$ voici deux méthodes :
+\begin{itemize}
+ \item 
+Comme $u = -(\frac{\sqrt{2}}{2} + i \frac{\sqrt{2} }{2} )$ est l'opposé de 
+$v = (\frac{\sqrt{2}}{2} + i \frac{\sqrt{2} }{2} )$ , il correspond au symétrique par rapport à l'origine, ce
+ qui correspond à faire un demi-tour, c'est à dire une rotation d'angle $\pi$..
+Pour obtenir l'argument de $u$, il faut donc rajouter $\pi$ à celui de $v$, qui lui vaut $\frac{\pi}{4}$.
+Donc l'argument de 
+$ -(\frac{\sqrt{2}}{2} + i \frac{\sqrt{2} }{2} )$ est $\frac{\pi}{4} + \pi = \frac{5\pi}{4} $. Donc 
+$ -(\frac{\sqrt{2}}{2} + i \frac{\sqrt{2} }{2} ) = e^{i\frac{5\pi}{4} } $
+(Si ce raisonnement ne vous paraît pas claire, essayer de faire un dessin dans le refaire en faisant un dessin dans le plan complexe ).
+\item
+On peut aussi le voire en disant que 
+$-1 = e^{i\pi} $ (si cette formule ne vous paraît pas claire, réfléchissez-y...) .
+D'où , 
+$-(\frac{\sqrt{2}}{2} + i \frac{\sqrt{2} }{2} ) = -e^{i\frac{\pi}{4} } 
+=
+e^{i\pi} e^{i \frac{\pi}{4} } = e^{i \frac{5\pi}{4} } $.
+\end{itemize}
+
+Finalement $z= \frac{\sqrt{10}}{\sqrt{2}} e^{i\frac{5\pi}{4} } $.
+
+
+\item
+On écrit $z$ sous forme cartésienne : $z=x+iy$.
+$$ \frac{z+1}{2z-1}= \frac{x+1+iy}{2x-1+i2y} = 
+\frac{(x+1+iy)(2x-1 -i2y)}{(2x-1+i2y)(2x-1-i2y )}$$
+
+$$= \frac{(x+1)(2x-1) + 2y^2 + i( y(2x-1) - 2y(x+1) ) }{(2x-1)^2 + 4y^2}$$
+Pour que ce nombre soit imaginaire pur, il faut que sa partie réelle soit nulle, c'est à 
+dire que 
+$(x+1)(2x-1) + 2y^2 = 0$ ce qui équivaut à 
+$$ \label{eq1} 2x^2 +x+2y^2-1=0$$
+Pour la deuxième condition, 
+$$\left | \frac{3z+i}{z-3} \right | = 3  \Leftrightarrow |3z+i|^2 = 3^2|z-3|^2 
+\Leftrightarrow 
+|3x + i(3y+1)|^2 = 9|x-3+iy|^2 
+\Leftrightarrow 
+9x^2 + (3y+1)^2 = 9(x-3)^2+9y^2 $$
+$$\Leftrightarrow
+9x^2+9y^2+6y+1 = 9x^2 -54x +81 + 9y^2 
+\Leftrightarrow
+6y + 1  = -54 x +81
+\Leftrightarrow 
+y =-9x +\frac{40}{3}
+$$
+Si on met en commun les deux calculs qu'on vient de faire, $z= x+iy$ vérifie 
+$\frac{z+1}{2z-1}$ est imaginaire pur et 
+$\left |  \frac{3z+1}{z-3}  \right | $ si et seulement si $z$ vérifie le système d'équations :
+
+
+$$ \left \{  
+\begin{array}{ll}
+ 2x^2+x-1+2y^2 \\
+y = -9x + \frac{40}{3}
+\end{array}
+\right. $$
+En \textit{ remplaçant la deuxième équation dans la première} 
+on obtient l'équation 
+$$2x^2+x-1+2(-9x + \frac{40}{3})^2 = 0
+=2x^2+x-1+162x^2 -480x +\frac{3200}{9 } =
+164x^2 - 479x + \frac{3191}{9}$$
+Le discriminant de ce trinome est $\Delta = \frac{-28327}{9} $, le système n'a 
+donc pas de solutions, et l'ensemble des $z$ qui vérifient les conditions de l'énoncé est donc vide.
+
+\item
+On peut faire directement le calcul en posant $u=x+iy$ et 
+$v=x'+iy'$. \\
+Une autre méthode (moins calculatoire est : 
+$$|u+v|^2 + |u-v|^2 = (u+v) \overline{(u+v)} + (u-v) \overline{(u-v)}
+= (u+v)(\bar{u} + \bar{v} ) + (u-v) (\bar{u} - \bar{v} ) $$
+$$= u \bar{u} + u \bar{v} + v\bar{u} + u\bar{u} + u \bar{u} -u\bar{v} - v\bar{u} + v\bar{v} 
+=2(|u|^2 + |v|^2)$$
+
+\item
+ On utilise la formule d'Euler :
+$$\sin(\theta)\cos^2(\theta) = \left( \frac{e^{i\theta} - e^{-i\theta}}{2i} \right )
+ \left (\frac{e^{i\theta} + e^{-i\theta }}{2}  \right )^2
+=
+\left ( \frac{e^{i\theta} - e^{-i \theta }}{2i} \right ) \left ( 
+\frac{e^{2i\theta} +2 + e^{-2i\theta } }{4}  \right ) $$
+$$
+=
+\frac{e^{3i\theta} + 2 e^{i\theta} + e^{-i\theta } - e^{i\theta} - 2e^{-i\theta} - e^{-3i\theta} }{8i}
+=
+\frac{1}{4} \left ( \frac{ e^{3i\theta } - e^{-3i\theta } }{2i} + \frac{e^{i \theta} - e^{-i\theta }}{2i}  \right ) =
+\frac{1}{4} ( \sin(3\theta) + \sin(\theta) )$$
+
+Donc 
+$\displaystyle \int_0^{\frac{\pi}{2}} \sin(\theta) \cos^2(\theta) d\theta 
+= \frac{1}{4} \left( \int_0^{\frac{\pi}{2}} \sin (3\theta ) d\theta 
++ \int_0^{\frac{\pi}{2}} \sin(\theta) d\theta \right) $.
+On se convainc qu'une primitive de 
+$\sin (3 \theta)$ est 
+$-\frac{\cos(3 \theta ) }{3}$, donc
+$$\int_0^{\frac{\pi}{2}} \sin(\theta) \cos^2(\theta) d\theta =
+\frac{1}{4} \left[ -\frac{\cos(3\theta)}{3}  - \cos(\theta) \right]_0^{\frac{\pi}{2}}
+=\frac{1}{4} (0+0-(\frac{-1}{3}) -(-1) ) = \frac{1}{4} \frac{4}{3} = \frac{1}{3} $$
+
+\item
+
+Il est facile de voir que 
+$z_0 = - \sqrt[3]{2} $ est une solution de l'équation.
+A partir de là ,
+$$z^3 = -2 = z_0^3 \Leftrightarrow (\frac{z}{z_0})^3=1
+\Leftrightarrow \frac{z}{z_0} \in \{ 1, e^{\frac{2i\pi}{3} } , e^{\frac{4i\pi}{3} } \}$$
+Il y a donc trois solutions : 
+
+$$z = -\sqrt[3]{2}, \ \  z=-\sqrt[3]{2} e^{\frac{2i\pi}{3}} \ , \ \ 
+z=-\sqrt[3]{2}  e^{ \frac{4i\pi}{3}} $$
+
+
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

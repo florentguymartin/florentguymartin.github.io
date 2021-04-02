@@ -1,0 +1,126 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+
+
+
+
+\newtheorem{Theoreme}{Th{\'e}or{\`e}me}[section]
+\newtheorem{Definition}{D{\'e}finition}[section]
+\newtheorem{Prop}{Proposition}[section]
+\newtheorem{Lemme}{Lemme}[section]
+
+\begin{document}
+
+\title{Correction du devoir maison}
+\maketitle
+\renewcommand{\labelitemi}{$\circ$}
+\section*{Exercice 1}
+Au voisinage de $0$ on a :
+$$\frac{ \cos(x) }{1+x+x^2} = \frac{1-\frac{x^2}{2} + \frac{x^4}{24} +
+  \circ(x^4)}{1+x+x^2} $$ \\
+$=(1-\frac{x^2}{2}+\frac{x^4}{24} +\circ(x^4) \
+)(1-(x+x^2)+(x+x^2)^2-(x+x^2)^3+(x+x^2)^4 +\circ (x^4) \ ) $ \\
+ $= ( 1 - \frac{x^{2}}{2} + \frac{x}{24} )(1-x-x^2+x^2+2x^3+x^4-x^3-3x^4+x^4 +
+\circ (x^4)
+\ )$
+\\
+$=(1-\frac{x^2}{2}+\frac{x^4}{24})(1-x+x^3-x^4 +\circ (x^4) \ )$\\
+$=1-x+x^3-x^4-\frac{x^2}{2}+\frac{x^3}{2} +\frac{x^4}{24} + \circ(x^4)$\\
+$=1-x-\frac{x^2}{2} +\frac{3x^3}{2} - \frac{23x^4}{24} + \circ(x^4)$\\
+
+
+\section*{Exercice 2}
+On fait un DL de $f$ pour $x \neq 0$ au voisinage de $0$ :
+$$f(x) = \frac{x}{e^x-1}=\frac{x}{x+\frac{x^2}{2}+\circ(x^2)}$$
+$$ = \frac{x}{x(1+\frac{x}{2} + \circ(x) \ )} = \frac{1}{1+\frac{x}{2} +
+  \circ(x) }= 1-\frac{x}{2} + \circ(x)$$
+Comme par ailleurs l'{\'e}nonc{\'e} donne $f(0)=1$ le DL est valable au
+voisinage de $0$. Comme c'est un DL {\`a} l'ordre $1$, on en d{\'e}duit que
+$f$ est d{\'e}rivable en $0$, de d{\'e}riv{\'e}e $f'(0)=\frac{-1}{2}$.
+
+
+\section*{Exercice 3}
+On fait le changement de variable $u=\sqrt(x)$, soit $x=u^2$ qui donne
+$dx =2u.du$:
+$$I=\int_5^6\frac{x\sqrt{x}+1}{x+1}dx =
+\int_{\sqrt{5}}^{\sqrt{6}}\frac{u^3+1}{u+1}2udu
+=2\int_{\sqrt{5}}^{\sqrt{6}}\frac{u^4+u}{u^2+1}du
+$$
+Puis on fait la division euclidienne de $X^4+X$ par $X^2+1$ qui
+donne\\
+$X^4+X=(X^2+1)(X^2-1)+X+1$.\\
+D'o{\`u} $\frac{X^4+X}{X^2+1} = X^2-1+\frac{X}{X^2+1}+
+\frac{1}{X^2+1}$. Donc 
+$$I=2\int_{\sqrt{5}}^{\sqrt{6}} u^2-1+\frac{u}{u^2+1}+\frac{1}{u^2+1}
+\ du$$
+En utilisant le fait qu'une primitive de $\frac{2u}{u^2+1}$ est
+$\ln(u²+1)$ on a :
+$$I=[\frac{2u^3}{3}-2u+\ln(u^2+1) +
+2\arctan(u)]^{\sqrt{6}}_{\sqrt{5}}$$
+$$=2\sqrt{6} -\frac{4\sqrt{5}}{3} + \ln(\frac{7}{6}) +
+2\arctan(\sqrt{6})-2\arctan(\sqrt{5})$$
+
+\section*{Exercice 4}
+Une racine {\'e}vidente de $X^3-2X^2+X-2$ est $2$ , qui permet de
+factoriser :$X^3-2X^2+X-2=(X-2)(X^2+1)$. On a donc 
+$$\frac{X+2}{X^3-2X^2+X-2}=\frac{aX+b}{X^2+1}+\frac{c}{X-2}$$
+En multipliant par $(X-2)$ et en {\'e}valuant en $2$ on obtient
+$c=\frac{4}{5}$. En faisant tendre $X$ vers $\infty$ on trouve un
+{\'e}quivalent $\frac{1}{X^2}$ {\`a} gauche, et {\`a} droite on a deux termes
+"dominants" :$\frac{a}{X}+\frac{c}{X}$. Ce dernier terme doit donc
+{\^e}tre nul, soit $a=-c=\frac{-4}{5}$. Pour finir on {\'e}value en $0$, qui
+donne $\frac{2}{-2} = -1 = b-\frac{c}{2}$ ,
+i.e. $b=\frac{-3}{5}$. Finalement
+$$\frac{X+2}{X^3-2X^2+X-2}=\frac{-4X-3}{5(X^2+1)}+\frac{4}{5(X-2)}$$
+
+\section*{Exercice 5}
+On distingue deux cas :
+\begin{itemize}
+\item Si $\forall x \in \mathbb{R}_+$ on a $f(x)\leq 0$ , alors $0$
+  est le maximum, et est atteint en $0$ (car $f(0)=0$ par hypoth{\`e}se).
+\item Sinon, il existe un $x_0 \in \mathbb{R}_+$ tel que
+  $f(x_0)>0$. Alors par d{\'e}finition de la limite, on sait qu'il existe
+  un $A \geq 0$ tel que pour tout $x\geq A  \ , \  f(x) <f(x_0)$ (on a pris
+  $\epsilon = f(x_0)>0$). Alors sur l'intervalle ferm{\'e} born{\'e} $[0,A]$,
+  la fonction $f$ {\'e}tant continue y atteint ses bornes (th{\'e}or{\`e}me de
+  Heine, ou Weierstrass). Donc il existe $x_1 \in [0,A]$ tel que pour
+  tout $x\in[0,A] \ f(x)\leq f(x_1)$. De plus on a que $x_0 \in
+  [0,A]$, car sinon on aurait $x_0 \geq A $ donc $f(x_0)<f(x_0)$ qui
+  est impossible. Et donc $f(x_0)\leq f(x_1)$. Ainsi pour $x\in[0,A] $
+  on a $f(x) \leq f(x_1)$ et de m{\^e}me pour $x\geq A$ on a $f(x) \leq
+  f(x_0) \leq f(x_1)$. Donc la fonction $f$ a bien un maximum, atteint
+  en $x_1$.
+\end{itemize}
+\section*{Exercice 6}
+Les solutions de l'{\'e}quation homog{\`e}ne sont de la forme $Ke^x$, et on a
+que si on trouve une solution particuli{\`e}re $y_1$ de
+$y'-y=e^x$, et une solution $y_2$ de $y'-y=e^{2x}$, alors le caract{\`e}re
+lin{\'e}aire de l'{\'e}quation fait que $y_1+y_2$ est solution de
+$y'-y=e^x+e^{2x}$.\\
+Pour trouver $y_1$ sous la forme $\lambda(x)e^x$ , la variation de la
+constante nous donne $\lambda'(x) = 1$ donc par exemple $\lambda(x) =
+x$ \ soit \  $y_1(x) = xe^x$ . Pour $y_2$ on peut appliquer la variation de
+la constante, ou trouver directement "{\`a} l'oeil" $y_2(x) =
+e^{2x}$. Donc $xe^x+e^{2x}$ est une solution de notre {\'e}quation de d{\'e}part. \\
+Finalement les solutions sont de la forme $xe^x+e^{2x} + Ke^x$ avec
+$K\in \mathbb{R}$, et la condition $y(0)=2$ nous donne $1+K=2$ donc $K=1$.
+
+
+
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{bibli}
+
+
+
+
+
+\end{document}

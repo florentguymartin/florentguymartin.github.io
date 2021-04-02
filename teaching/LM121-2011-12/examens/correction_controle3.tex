@@ -1,0 +1,200 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+
+
+
+\newtheorem{Theoreme}{Th{\'e}or{\`e}me}[section]
+\newtheorem{Definition}{D{\'e}finition}[section]
+\newtheorem{Prop}{Proposition}[section]
+\newtheorem{Lemme}{Lemme}[section]
+\date{}
+\begin{document}
+
+\title{Correction contrôle continu 3 LM 121 pcme 14.2}
+\maketitle
+
+\begin{enumerate}
+
+\item 
+
+En multipliant les deux matrices on tombe sur l'égalité \\
+$\begin{pmatrix} a+2b&3a-4b \\-2 &14 \end{pmatrix} = \begin{pmatrix}11 &3\\-2&14\end{pmatrix}$\\
+ce qui équivaut donc au système : \\
+$\begin{array}{rl}
+ a+2b=&11 \\
+3a-4b=&3 
+\end{array}
+$\\
+On résout ce système et on trouve qu'il existe une unique solution : $a=5$, $b=3$.
+
+\item
+On trouve 
+$Det(A) = 6 \neq 0$ donc $A$ est inversible. On calcule son inverse avec la méthode du pivot de Gauss : 
+$$
+\begin{pmatrix}
+ 3 & 4 & 4 \\
+1 & 2 & 1 \\
+0 & -2 & 4 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 1 & 0 & 0 \\
+0 & 1 & 0 \\
+ 0 & 0 & 1 
+\end{pmatrix}
+\right. 
+\xrightarrow[]{L_1 \leftrightarrow L_2 }
+\begin{pmatrix}
+ 1 & 2 & 1 \\
+3 & 4 & 4 \\
+0 & -2 & 4 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 0 & 1 & 0 \\
+1 & 0 & 0 \\
+ 0 & 0 & 1 
+\end{pmatrix}
+\right. 
+\xrightarrow[]{L_2 \leftarrow L_2-3L_1 }$$
+
+$$
+\begin{pmatrix}
+ 1 & 2 & 1 \\
+0 & -2 & 1 \\
+0 & -2 & 4 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 0 & 1 & 0 \\
+1 & -3 & 0 \\
+ 0 & 0 & 1 
+\end{pmatrix}
+\right. 
+\xrightarrow[]{L_2 \leftarrow \frac{L_2}{-2} }
+\begin{pmatrix}
+ 1 & 2 & 1 \\
+0 & 1 & \frac{-1}{2} \\
+0 & -2 & 4 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 0 & 1 & 0 \\
+\frac{-1}{2} & \frac{3}{2} & 0 \\
+ 0 & 0 & 1 
+\end{pmatrix}
+\right. 
+\xrightarrow[L_3 \leftarrow L_3 +2L_2]{L_1 \leftarrow L_1 - 2 L_2 }
+$$
+
+$$
+\begin{pmatrix}
+ 1 & 0 & 2 \\
+0 & 1 & \frac{-1}{2} \\
+0 & 0 & 3 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 1 & -2 & 0 \\
+\frac{-1}{2} & \frac{3}{2} & 0 \\
+ -1 & 3 & 1 
+\end{pmatrix}
+\right. 
+\xrightarrow[]{L_3 \leftarrow \frac{L_3}{3} }
+\begin{pmatrix}
+ 1 & 0 & 2 \\
+0 & 1 & \frac{-1}{2} \\
+0 & 0 & 1 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ 1 & -2 & 0 \\
+\frac{-1}{2} & \frac{3}{2} & 0 \\
+ \frac{-1}{3} & 1 & \frac{1}{3} 
+\end{pmatrix}
+\right. 
+\xrightarrow[L_2 \leftarrow L_2+ \frac{1}{2}L_3]{L_1 \leftarrow L_1-2L_3 }
+$$
+
+$
+\begin{pmatrix}
+ 1 & 0 & 0 \\
+0 & 1 & 0\\
+0 & 0 & 1 
+\end{pmatrix}
+\left| 
+\begin{pmatrix} 
+ \frac{5}{3} & -4 & \frac{-2}{3} \\
+\frac{-2}{3} & 2 & \frac{1}{6} \\
+ \frac{-1}{3} & 1 & \frac{1}{3} 
+\end{pmatrix}
+\right. 
+$\\
+On vérifie bien que 
+$\begin{pmatrix} 
+ \frac{5}{3} & -4 & \frac{-2}{3} \\
+\frac{-2}{3} & 2 & \frac{1}{6} \\
+ \frac{-1}{3} & 1 & \frac{1}{3} 
+\end{pmatrix}
+\begin{pmatrix}
+ 3 & 4 & 4 \\
+1 & 2 & 1 \\
+0 & -2 & 4 
+\end{pmatrix}
+=
+\begin{pmatrix}
+ 1 & 0 & 0 \\
+0 & 1 & 0\\
+0 & 0 & 1 
+\end{pmatrix}$ \\
+donc $A^{-1} = 
+\begin{pmatrix} 
+ \frac{5}{3} & -4 & \frac{-2}{3} \\
+\frac{-2}{3} & 2 & \frac{1}{6} \\
+ \frac{-1}{3} & 1 & \frac{1}{3} 
+\end{pmatrix}$
+
+\item
+On vérifie que les points ne sont pas alignés. $(ABC)$ est donc le plan passant par 
+$A$ et dirigé par les vecteurs libres 
+$\vec{AB}= \begin{pmatrix} 0 \\1 \\ 2 \end{pmatrix}$ et 
+$ \vec{AC} = \begin{pmatrix} -1\\ 0 \\ 1\end{pmatrix}$.\\
+Leur produit vectoriel est \\
+$\begin{pmatrix} 0 \\1 \\ 2 \end{pmatrix} \wedge 
+\begin{pmatrix} -1\\ 0 \\ 1\end{pmatrix}=
+\begin{pmatrix} 1 \\ -2 \\ 1.\end{pmatrix}$ qui est donc un vecteur normal à $(ABC)$.
+Le plan a donc une équation de la forme
+$x -2y +z =d$ . Pour trouver $d$ on remplace cette équation avec les coordonnées de $A$ :\\
+$1-2+1=d=0$\\
+Donc $x -2y +z =0$ est une équation de $(ABC)$.
+
+\item
+Il y a énormément de possiblités. Par exemple 
+$B = \begin{pmatrix}
+      0&0&1 \\
+0&0&0\\0&0&0
+\end{pmatrix}
+$ marche.
+
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

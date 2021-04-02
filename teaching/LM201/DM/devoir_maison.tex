@@ -1,0 +1,81 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+
+
+
+
+\newtheorem{Theoreme}{Th{\'e}or{\`e}me}[section]
+\newtheorem{Definition}{D{\'e}finition}[section]
+\newtheorem{Prop}{Proposition}[section]
+\newtheorem{Lemme}{Lemme}[section]
+
+\begin{document}
+
+
+
+\renewcommand{\labelitemi}{$\circ$}
+
+\large{Exercice 1} : \\
+Donner le DL {\`a} l'ordre 4 en 0 de \\
+$$\frac{\cos (x)}{1+x+x^2}$$
+
+\vspace{5mm}
+
+\large{Exercice 2} : \\
+On rappelle que $f : \mathbb{R} \rightarrow \mathbb{R}$ est d{\'e}rivable
+si et seulement si $f$ a un DL {\`a} l'ordre 1 en 0 : $f(x) = a +xb +\circ
+(x)$ , et dans ce cas $f'(0)=b$.\\
+Soit $f : \mathbb{R} \rightarrow \mathbb{R}$ d{\'e}finie par 
+$$f(x) = \left\{ 
+\begin{array}{ll}
+\frac{x}{e^x-1} & \text{ si} \ x \neq 0 \\
+1 & \text{si} \ x=0
+\end{array}\right. $$
+Montrer que $f$ est d{\'e}rivable sur $\mathbb{R}$ et calculer $f'(0)$.
+
+
+\vspace{5mm}
+
+\large{Exercice 3} : \\
+Calculer 
+$$\int_5^6 \frac{x\sqrt{x} +1}{x+1}dx$$
+
+
+
+\vspace{5mm}
+
+\large{Exercice 4} : \\
+D{\'e}composer en {\'e}l{\'e}ment simple la fraction rationelle :
+$$\frac{X+2}{X^3-2X^2+X-2}$$
+(indication : on pourra d{\'e}j{\`a} essayer de trouver une racine pas trop
+compliqu{\'e}e du d{\'e}nominateur)
+
+\vspace{5mm}
+
+\large{Exercice 5} :\\
+Soit $f : \mathbb{R}_+ \rightarrow \mathbb{R}$, une fonction
+continue telle que $f(0)=0$ et
+$f(x) \xrightarrow[x \to +  \infty]{} 0$. Montrer que $f$ est major{\'e}e sur
+$\mathbb{R}_+$ et y atteint son maximum (c'est {\`a} dire qu'il existe
+$x_1 \in \mathbb{R}_+$ tel que $\forall x \in \mathbb{R}_+ \ f(x)
+\leq f(x_1)$).
+
+\vspace{5mm}
+
+\large{Exercice 6} : \\
+Trouver la solution de l'{\'e}quation diff{\'e}rentielle :\\
+$y'(x) - y(x) =e^x+e^{2x}$ \ telle que $y(0)=2$.
+
+\bibliographystyle{alpha}
+\bibliography{bibli}
+
+
+
+
+
+\end{document}

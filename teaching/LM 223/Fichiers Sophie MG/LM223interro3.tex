@@ -1,0 +1,125 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[francais]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[dvips,final]{graphics}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{theorem}
+\usepackage[T1]{fontenc}
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+\title{Fiche 1\\Espaces Vectoriels, Applications linéaires}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM223 -
+Ann\'ee 2011-2012}\\
+
+\begin{center}
+\Large
+\textbf{Interro n$^o$ 3}
+\end{center}
+\normalsize
+
+
+\bigskip
+\noindent
+\textbf{Exercice 1:}
+\begin{enumerate}
+\item Donner la d\'efinition de ``forme quadratique''.
+\item Donner la d\'efinition de ``produit scalaire''.
+\item Donner un exemple (sans d\'emonstration) de produit scalaire $b:E\times E\rightarrow \R$ dans chacun des cas suivants:
+\begin{enumerate}
+\item $E=\R^n$,
+\item $E=M_n(\R)$,
+\item $E=\R_n[X]$.
+\end{enumerate}
+\end{enumerate}
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+On consid\`ere la forme quadratique $q: \R^3\rightarrow \R$ donn\'ee par 
+$$
+q(x)=x_1^2+x_2^2+4x_3^2-2x_1x_2-4x_1x_3, \quad \forall x=(x_1,x_2,x_3)\in\R^3.
+$$
+On note $b$ la forme polaire de $q$.
+\begin{enumerate}
+\item \'Ecrire la matrice $M$ de $q$ dans la base canonique.
+\item Donner l'expression de $b\big((x_1,x_2,x_3),(y_1,y_2,y_3)\big)$.
+\item \'Ecrire $q$ comme combinaison de carr\'es de formes lin\'eairement ind\'ependantes.
+\item Quel est le rang de $q$? Quelle est sa signature? Justifier les r\'eponses.
+\item La forme $q$ est-elle d\'eg\'en\'er\'ee? Est-elle d\'efinie? Justifier les r\'eponses.
+\item La forme $b$ est-elle un produit scalaire? Justifier la r\'eponse.
+\item Donner une base $q$-orthogonale de $\R^3$.
+\item Donner une matrice inversible $P$ telle que $^tPMP$ soit diagonale. Pr\'eciser alors la matrice diagonale obtenue.
+\end{enumerate}
+
+
+\bigskip
+\noindent
+\textbf{Exercice 3:}\\
+On consid\`ere une forme quadratique $q:E\rightarrow \R$, o\`u $E$ est un espace vectoriel r\'eel de dimension 3, de base $\BC=\{e_1,e_2,e_3\}$.
+La matrice de $q$ dans la base $\BC$ est
+$$
+Q=
+\begin{pmatrix}
+3&1&-5\\
+1&0&-2\\
+-5&-2&6
+\end{pmatrix}
+$$
+\begin{enumerate}
+  \item Montrer que le vecteur $u=3e_2+2e_3$ est un vecteur $q$-isotrope.
+  \item D\'eterminer $\{u\}^\bot$.
+  \item Si $E=\R_2[X]$ et $\BC=\{1,X,X^2\}$, trouver deux polyn\^omes, non proportionnels, $q$-orthogonaux \`a $P=3X+2X^2$.
+  \end{enumerate}  
+
+\end{document}

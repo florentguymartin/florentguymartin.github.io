@@ -1,0 +1,101 @@
+\documentclass{article}
+
+
+\usepackage[latin1]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+
+
+\begin{document}
+
+\title{Correction du controle n°1}
+\maketitle
+
+\section{Exercice 1}
+Il fallait faire un DL de $f(x) = \frac{1}{e^x + sin(x)}$ en $0$ {\`a} l'ordre
+$3$. On a : \\
+$\frac{1}{e^x+sin(x)}= 
+\frac{1}{1+x+\frac{x^2}{2} + \frac{x^3}{6} +\circ (x^3)
+  +x-\frac{x^3}{6} + \circ (x^3)}
+=$
+\begin{equation} \frac{1}{1+2x+\frac{x^2}{2}+\circ (x^3) } \label{2} \end{equation}
+On utilise maintenant le DL de $\frac{1}{1+u}$ en $0$ qui est : 
+\begin{equation} \frac{1}{1+u} = 1-u+u^2-u^3 \ldots +(-1)^n u^n +
+\circ (u^n) \label{1} \end{equation}
+ qui nous donne {\`a} l'ordre $3$ : \\
+\begin{equation} f(x) = 1 -(2x+\frac{x^2}{2} + \circ(x^3) ) +  (2x+\frac{x^2}{2}
++ \circ(x^3) )^2 -  (2x+\frac{x^2}{2} + \circ(x^3) )^3 + \circ[
+(2x+\frac{x^2}{2} + \circ(x^3) )^3 ] \label{3} \end{equation}
+Pour faire {\c c}a, j'ai juste remplac{\'e} $u$ dans \eqref{1} par l'expression
+$2x+\frac{x^2}{2}+\circ (x^3)$ qu'on voyait apparaitre dans
+\eqref{2}. \par
+On doit ensuite d{\'e}velopper \eqref{3}. Pour bien comprendre
+ce qu'on doit faire, je d{\'e}taille ce qu'il se passe pour le deuxi{\`e}me
+terme : 
+$$(2x+\frac{x^2}{2} + \circ (x^3) )^2 = 
+4x^2 + \frac{x^4}{4} + (\circ (x^3))^2 + 2x^3 + 4x.\circ (x^3) +
+x^2.\circ (x^3)$$
+Poure faire {\c c}a j'ai utilis{\'e} la formule qui ne devrait pas trop vous
+{\'e}tonner : $(a+b+c)^2 = a^2 +b^2 +c^2 +2ab+2ac+2bc$. Ensuite il faut se
+convaincre que 
+\begin {enumerate}
+\item $\frac{x^4}{4} = \circ(x^3)$
+\item $(\circ (x^3))^2 = \circ (x^3)$
+\item $4x.\circ (x^3) = \circ(x^3)$
+\item $x^2.\circ (x^3) = \circ (x^3)$
+\item enfin que $\circ(x^3) + \circ(x^3) + \circ(x^3) +\circ(x^3) = \circ(x^3)$.
+\end{enumerate}
+Finalement cela nous donne :
+$$(2x+\frac{x^2}{2} + \circ (x^3) )^2 = 4x^2 + 2x^3 + \circ (x^3)$$
+Avec la m{\^e}me m{\'e}thode on obtient : \\
+$(2x+\frac{x^2}{2} + \circ(x^3) )^3 = 8x^3+ \circ(x^3)$ et $\circ[
+(2x+\frac{x^2}{2} + \circ(x^3) )^3 ] = \circ (x^3)$.
+Si on voulait {\^e}tre tr{\`e}s rigoureux, pour la premi{\`e}re {\'e}galit{\'e}, il faudrait d{\'e}velopper le cube avec
+la formule $(a+b+c)^3 = a^3+b^3+c^3+3a^2b+3ab^2+ \ldots$. Mais il faut
+absolument que vous soyez convaincu qu'une fois qu'on aura d{\'e}velopp{\'e}
+$(2x+\frac{x^2}{2} + \circ(x^3) )^3$, on aura le terme $(2x)^3$, et
+tous les autres seront des $\circ (x^3)$. La formule \eqref{3} devient
+donc :  
+$$f(x) = 1 -(2x+ \frac{x^2}{2} + \circ (x^3) ) + (4x^2 + 2x^3 + \circ
+(x^3) ) -(8x^3 + \circ (x^3) ) + \circ (x^3)$$
+Qui donne apr{\`e}s simplification : 
+$$1-2x+ \frac{7}{2}x^2 - 6x^3 + \circ (x^3)$$
+
+\section{Exercice 2}
+$$cos^3(x).sin(x) = (\frac{e^{ix} + e^{-ix}}{2}
+)^3.(\frac{e^{ix}-e^{-ix}}{2i})$$
+\begin{equation} =(\frac{e^{3ix} + 3e^{2ix}.e^{-ix} + 3e^{ix}.e^{-2ix} + e^{-3ix}
+}{8}).(\frac {e^{ix} - e^{-ix} }{2i}) \label{4} \end{equation}
+On a intensivement utilis{\'e} le fait que $(e^z)^n = e^{nz}$ (qu'on a le
+droit de faire quand $n$ est un r{\'e}el positif), donc par exemple
+$(e^{ix})^3 = e^{3ix}$. Enfin on d{\'e}veloppe \eqref{4} en faisant les
+simplifications du genre $e^{2ix}.e^{-ix} = e^{ix}$ on obtient : 
+$$(\frac{e^{i3x}+3e^{ix} + 3 e^{-ix} + e^{-i3x}}{8}).( \frac{e^{ix} -
+  e^{-ix}}{2i} )$$
+$$=\frac{1}{8}.\frac{e^{i4x}+3e^{i2x} + 3 + e^{-i2x} - e^{i2x} - 3 -3e^{-i2x} -
+  e^{-i4x} }{2i}$$
+$$=\frac{1}{8}.( \frac{e^{i4x} - e^{-i4x}}{2i} +2\frac{e^{i2x} -
+  e^{-i2x}}{2i})$$
+$$= \frac{1}{8} . (sin(4x) + 2 sin(2x) ) = \frac{sin(4x)}{8} +
+\frac{sin(2x)}{4}$$
+ 
+
+
+
+
+
+
+
+
+
+
+
+\bibliographystyle{alpha}
+\bibliography{bibli}
+
+
+
+
+
+\end{document}

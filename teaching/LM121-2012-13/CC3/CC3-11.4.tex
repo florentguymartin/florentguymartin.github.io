@@ -1,0 +1,185 @@
+\documentclass[a4paper, 10pt]{article}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[francais]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{theorem}
+\usepackage{mathdots}
+
+%\usepackage[cp850]{inputenc}
+%\usepackage[textures]{epsfig}
+%\usepackage{alltt}
+%\renewcommand{\baselinestretch}{1,25}
+%\psfigdriver{dvips}
+
+\pagestyle{empty}
+% my margins
+
+\addtolength{\oddsidemargin}{-.875in}
+\addtolength{\evensidemargin}{-.875in}
+\addtolength{\textwidth}{1.75in}
+
+\addtolength{\topmargin}{-.875in}
+\addtolength{\textheight}{1.75in}
+\theoremstyle{plain}
+\theorembodyfont{\upshape}
+\newtheorem{thm}{Th\'eoreme}
+\newtheorem{cor}[thm]{Corollaire}
+\newtheorem{lem}[thm]{Lemme}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{defn}[thm]{D\'efinition}
+\newtheorem{rem}[thm]{Remarque}
+\newtheorem{ex}{Exercice}{\theorembodyfont{\upshape}}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\Li}{\mathcal{L}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\F}{\mathbf{F}}
+\renewcommand{\S}{\mathbb{S}}
+
+\newcommand{\im}{\textup{Im}}
+\newcommand{\BC}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DC}{\mathcal{D}}
+\newcommand{\can}{_{\mathrm{can}}}
+
+\newcommand{\Mat}{\textup{Mat}}
+\newcommand{\Vect}{\mathrm{Vect}}
+\newcommand{\rg}{\textup{rg}}
+\newcommand{\cm}{\textup{Comat}}
+
+\begin{document}
+\noindent
+\large
+\textbf{Universit\'e Pierre et Marie Curie 
+ - LM121 -
+Ann\'ee 2012-2013}\\
+
+\begin{center}
+\Large
+\textbf{Interro n$^o$ 3}
+\end{center}
+\normalsize
+
+\medskip
+\noindent
+Question de cours : \emph{donner la définition d'une base de $\R^2$.}
+
+\bigskip
+\noindent
+\textbf{Exercice 1:}\\
+Soit $A =\begin{pmatrix}
+          3&4&4 \\
+         1&2&1 \\
+         0&-2&4
+         \end{pmatrix}$.
+Calculer son déterminant, et si c'est possible calculer $A^{-1}$.
+
+\bigskip
+\noindent
+\textbf{Exercice 2:}\\
+Soit $A=(1,1,1) , B= (1,2,3) , C=(0,1,2)$. Ces points sont-ils alignés? Si non, donner 
+une équation du plan $(ABC)$.
+
+\medskip
+\noindent
+\textbf{Exercice 3:}\\
+On considère le déterminant suivant de taille $2n$ : 
+\[D = 
+\begin{vmatrix}
+a & 0 & \cdots & \cdots & \cdots & \cdots &0 & b \\
+0 & a & \ddots  &       &      &\iddots & b & 0 \\
+\vdots & \ddots & \ddots & 0  & 0 &\iddots & \iddots  & \vdots \\
+\vdots &  & 0 & a & b & 0 & &\vdots \\
+\vdots & & 0 & b & a & 0 & & \vdots \\
+\vdots & \iddots  & \iddots & 0 & 0 & \ddots & \ddots & \vdots \\
+0 & b & \iddots & & & \ddots & a & 0 \\
+b &0 & \cdots & \cdots & \cdots & \cdots & 0 & a
+\end{vmatrix}
+\] 
+Calculer $D$. 
+
+
+\bigskip
+\noindent
+\textbf{Exercice 4:}\\
+Soit 
+$M=
+\begin{pmatrix}
+4 & -4 \\1&0
+\end{pmatrix}
+, P= 
+\begin{pmatrix}
+2&1\\1&0
+\end{pmatrix}
+$ et
+$T=
+\begin{pmatrix}
+2&1\\0&2
+\end{pmatrix}$.
+\begin{enumerate}
+\item 
+Calculer $P^{-1}$.
+\item Pour $n\in \N^*$ trouver\footnote{Si vous bloquez, 
+commencez par calculer $T^2,T^3,T^4, T^5$.} une formule simple pour 
+$T^n$. Justifier soigneusement votre résultat.
+\item 
+Montrer que pour $n\in \N^*$, $(P^{-1}MP)^n = P^{-1}M^nP$. 
+Calculer $P^{-1}MP$ et en déduire une formule pour 
+$M^n$.  
+\item 
+On considère la suite $(u_n)$ définie par 
+$u_0 =3$, $u_1 =4$ et par la relation de récurrence : 
+\[u_{n+2} = 4u_{n+1}-4u_n \hspace{1cm} \text{pour} \ n\in \N \]
+\begin{enumerate}
+
+\item
+Trouver une matrice $A\in M_2(\R)$ telle que 
+$\begin{pmatrix}
+u_{n+2} \\ u_{n+1}
+\end{pmatrix} = 
+A 
+\begin{pmatrix}
+u_{n+1} \\u_n
+\end{pmatrix}$
+pour tout $n\in \N$. 
+En déduire que 
+$\begin{pmatrix}
+u_{n+1}\\u_n
+\end{pmatrix} = 
+A^n 
+\begin{pmatrix}
+4\\3
+\end{pmatrix}$ 
+pour tout $n\in \N$.
+
+\item
+En utilisant la question précédente, et la formule obtenue pour 
+$M^n$ à la question $(3)$, 
+en déduire une formule pour $u_n$. \\
+Puis montrer que 
+$u_n \neq 0$ pour $n\geq 4$.\\
+Finalement justifier que 
+$\displaystyle \lim_{n\to + \infty} \frac{u_{n+5}}{u_{n+4}}$ existe et la calculer.
+
+\end{enumerate}
+\end{enumerate}
+
+
+
+
+\end{document}
+
+
